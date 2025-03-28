@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{936068C5-50C9-41D0-81F7-E9A8BC3EECDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6A87ACEC-9673-45C5-9050-83EECD968EC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{72E73001-3689-426B-B4F7-C8D7E8E3BFD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4DE342A4-6D17-418C-B4FA-2E24530E1E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoper.Application", "Shoper.Application\Shoper.Application.csproj", "{15C1E2B9-C5DD-40C3-BFD2-0CAB3364C300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoper.Domain", "Shoper.Domain\Shoper.Domain.csproj", "{923D50AD-321D-45DB-B1C3-814B1B595DC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoper.Persistence", "Shoper.Persistence\Shoper.Persistence.csproj", "{7CC5DD0B-590D-473A-8D6E-576D75EBCB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoper.WebApi", "Presentation\Shoper.WebApi\Shoper.WebApi.csproj", "{10138AE7-3CC9-41B4-85B3-F7D123F625DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoper.WebApp", "Presentation\Shoper.WebApp\Shoper.WebApp.csproj", "{B1AA3707-6889-436E-BD69-D2BF6FD40F3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15C1E2B9-C5DD-40C3-BFD2-0CAB3364C300} = {936068C5-50C9-41D0-81F7-E9A8BC3EECDD}
+		{923D50AD-321D-45DB-B1C3-814B1B595DC7} = {936068C5-50C9-41D0-81F7-E9A8BC3EECDD}
+		{7CC5DD0B-590D-473A-8D6E-576D75EBCB28} = {4DE342A4-6D17-418C-B4FA-2E24530E1E5E}
+		{10138AE7-3CC9-41B4-85B3-F7D123F625DE} = {72E73001-3689-426B-B4F7-C8D7E8E3BFD1}
+		{B1AA3707-6889-436E-BD69-D2BF6FD40F3A} = {72E73001-3689-426B-B4F7-C8D7E8E3BFD1}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15C1E2B9-C5DD-40C3-BFD2-0CAB3364C300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C1E2B9-C5DD-40C3-BFD2-0CAB3364C300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C1E2B9-C5DD-40C3-BFD2-0CAB3364C300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C1E2B9-C5DD-40C3-BFD2-0CAB3364C300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923D50AD-321D-45DB-B1C3-814B1B595DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923D50AD-321D-45DB-B1C3-814B1B595DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923D50AD-321D-45DB-B1C3-814B1B595DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923D50AD-321D-45DB-B1C3-814B1B595DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC5DD0B-590D-473A-8D6E-576D75EBCB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC5DD0B-590D-473A-8D6E-576D75EBCB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC5DD0B-590D-473A-8D6E-576D75EBCB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC5DD0B-590D-473A-8D6E-576D75EBCB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10138AE7-3CC9-41B4-85B3-F7D123F625DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10138AE7-3CC9-41B4-85B3-F7D123F625DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10138AE7-3CC9-41B4-85B3-F7D123F625DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10138AE7-3CC9-41B4-85B3-F7D123F625DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1AA3707-6889-436E-BD69-D2BF6FD40F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1AA3707-6889-436E-BD69-D2BF6FD40F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1AA3707-6889-436E-BD69-D2BF6FD40F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1AA3707-6889-436E-BD69-D2BF6FD40F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

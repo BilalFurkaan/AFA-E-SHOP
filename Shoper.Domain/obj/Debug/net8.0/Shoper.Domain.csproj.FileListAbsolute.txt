@@ -1,0 +1,11 @@
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/bin/Debug/net8.0/Shoper.Domain.deps.json
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/bin/Debug/net8.0/Shoper.Domain.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/bin/Debug/net8.0/Shoper.Domain.pdb
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.AssemblyInfoInputs.cache
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.AssemblyInfo.cs
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.csproj.CoreCompileInputs.cache
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/refint/Shoper.Domain.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.pdb
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Domain/obj/Debug/net8.0/ref/Shoper.Domain.dll
