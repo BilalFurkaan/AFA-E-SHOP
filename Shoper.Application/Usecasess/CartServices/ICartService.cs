@@ -9,4 +9,5 @@ public interface ICartService
     Task CreateCartAsync(CreateCartDto model);
     Task UpdateCartAsync(UpdateCartDto model);
     Task DeleteCartAsync(int id); 
+    Task UpdateTotalAmount(int cartId, decimal totalAmount);
 }

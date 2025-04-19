@@ -247,3 +247,4 @@
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.pdb
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.genruntimeconfig.cache
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/ref/Shoper.WebApi.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.sourcelink.json

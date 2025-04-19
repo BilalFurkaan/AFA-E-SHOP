@@ -8,6 +8,7 @@ namespace ShoperApplication.Usecasess.CartItemServices;
 public class CartItemService: ICartItemService
 {
     private readonly IRepository<CartItem> _repository;
+    
 
     public CartItemService(IRepository<CartItem> repository)
     {
@@ -71,4 +72,5 @@ public class CartItemService: ICartItemService
     {
         throw new NotImplementedException();
     }
+    
 }

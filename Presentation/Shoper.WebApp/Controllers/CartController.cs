@@ -29,7 +29,18 @@ namespace Shoper.WebApp.Controllers
             try
             {
                 model.CartId = 1;
+                var cart=await _cartService.GetByIdCartAsync(model.CartId);
+                foreach (var item in cart.CartItems)
+                {
+                    if (item.ProductId == model.ProductId)
+                    {
+                        
+                    }
+                }
+
                 await _cartItemService.CreateCartItemAsync(model);
+                var sumprice=cart.TotalAmount + model.TotalPrice;
+                await _cartService.UpdateTotalAmount(model.CartId, sumprice);
                 return Json(new { success = true });
             }
             catch (Exception ex)

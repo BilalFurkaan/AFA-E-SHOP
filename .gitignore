@@ -1,0 +1,8 @@
+
+# macOS
+.DS_Store
+*.sourcelink.json
+*.dll
+*.pdb
+bin/
+obj/

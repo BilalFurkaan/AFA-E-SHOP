@@ -2,6 +2,7 @@ using Shoper.Domain.Entities;
 using ShoperApplication.Dtos.CartDtos;
 using ShoperApplication.Dtos.CartItemDtos;
 using ShoperApplication.Interfaces;
+using ShoperApplication.Interfaces.ICartRepository;
 
 namespace ShoperApplication.Usecasess.CartServices;
 
@@ -11,13 +12,15 @@ public class CartService: ICartService
     private readonly IRepository<CartItem> _itemRepository;
     private readonly IRepository<Customer> _customerRepository;
     private readonly IRepository<Product> _productRepository;
+    private readonly ICartRepository _cartRepository;
 
-    public CartService(IRepository<Cart> cartRepository, IRepository<CartItem> cartItemRepository, IRepository<Customer> customerRepository, IRepository<Product> productRepository)
+    public CartService(IRepository<Cart> cartRepository, IRepository<CartItem> cartItemRepository, IRepository<Customer> customerRepository, IRepository<Product> productRepository, ICartRepository cartRepository1)
     {
         _repository = cartRepository;
         _itemRepository = cartItemRepository;
         _customerRepository = customerRepository;
         _productRepository = productRepository;
+        _cartRepository = cartRepository1;
     }
 
     public async Task<List<ResultCartDto>> GetAllCartAsync()
@@ -157,5 +160,10 @@ public class CartService: ICartService
             }
         }
         await _repository.DeleteAsync(cart);
+    }
+
+    public async Task UpdateTotalAmount(int cartId, decimal totalAmount)
+    {
+        await _cartRepository.UpdateTotalAmountAsync(cartId, totalAmount);
     }
 }
