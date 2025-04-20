@@ -30,15 +30,15 @@ namespace Shoper.WebApp.Controllers
             {
                 model.CartId = 1;
                 var cart=await _cartService.GetByIdCartAsync(model.CartId);
-                foreach (var item in cart.CartItems)
+                var check=await _cartItemService.CheckCartItems(model.CartId,model.ProductId);
+                if (check)
                 {
-                    if (item.ProductId == model.ProductId)
-                    {
-                        
-                    }
+                    await _cartItemService.UpdateQuantityAsync(model.CartId,model.ProductId,model.Quantity);
                 }
-
-                await _cartItemService.CreateCartItemAsync(model);
+                else
+                {
+                    await _cartItemService.CreateCartItemAsync(model);
+                }
                 var sumprice=cart.TotalAmount + model.TotalPrice;
                 await _cartService.UpdateTotalAmount(model.CartId, sumprice);
                 return Json(new { success = true });

@@ -1,9 +1,11 @@
 using Shoper.Domain.Entities;
 using Shoper.Persistence.Context;
 using Shoper.Persistence.Repositories;
+using Shoper.Persistence.Repositories.CartItemsRepository;
 using Shoper.Persistence.Repositories.CartRepository;
 using Shoper.Persistence.Repositories.ProductsRepository;
 using ShoperApplication.Interfaces;
+using ShoperApplication.Interfaces.ICartItemRepository;
 using ShoperApplication.Interfaces.ICartRepository;
 using ShoperApplication.Interfaces.IProductsRepository;
 using ShoperApplication.Usecasess.CartItemServices;
@@ -22,6 +24,7 @@ builder.Services.AddScoped<ICartRepository, CartsRepository>();
 builder.Services.AddScoped(typeof(IProductsRepository), typeof(ProductsRepository));
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<ICartItemService, CartItemService>();
+builder.Services.AddScoped<ICartItemRepository, CartItemsRepository>();
 
 
 

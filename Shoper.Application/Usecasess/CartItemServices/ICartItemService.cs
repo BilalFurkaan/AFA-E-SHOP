@@ -10,5 +10,7 @@ public interface ICartItemService
     Task UpdateCartItemAsync(UpdateCartItemDto model);
     Task DeleteCartItemAsync(int id);  
     Task <List<ResultCartItemDto>>GetByCartIdCartItemsAsync(int cartId);
+    Task UpdateQuantityAsync(int cartId, int productId, int quantity);
+    Task<bool> CheckCartItems(int cartId, int productId);
    
 }

@@ -1,6 +1,7 @@
 using Shoper.Domain.Entities;
 using ShoperApplication.Dtos.CartItemDtos;
 using ShoperApplication.Interfaces;
+using ShoperApplication.Interfaces.ICartItemRepository;
 using ShoperApplication.Usecasess.OrderItemServices;
 
 namespace ShoperApplication.Usecasess.CartItemServices;
@@ -8,11 +9,13 @@ namespace ShoperApplication.Usecasess.CartItemServices;
 public class CartItemService: ICartItemService
 {
     private readonly IRepository<CartItem> _repository;
+    private readonly ICartItemRepository _cartItemRepository;
     
 
-    public CartItemService(IRepository<CartItem> repository)
+    public CartItemService(IRepository<CartItem> repository, ICartItemRepository cartItemRepository)
     {
         _repository = repository;
+        _cartItemRepository = cartItemRepository;
     }
 
     public async Task<List<ResultCartItemDto>> GetAllCartItemAsync()
@@ -72,5 +75,15 @@ public class CartItemService: ICartItemService
     {
         throw new NotImplementedException();
     }
-    
+
+    public async Task UpdateQuantityAsync(int cartId, int productId, int quantity)
+    {
+        await _cartItemRepository.UpdateQuantityAsync(cartId, productId, quantity);
+    }
+
+    public async Task<bool> CheckCartItems(int cartId, int productId)
+    {
+        var value= await _cartItemRepository.CheckCartItemAsync(cartId, productId);
+        return value;
+    }
 }
