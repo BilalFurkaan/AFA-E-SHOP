@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dY3vAVG1U8tMi2xVkRmS14Khq20LvVd9Vzq+QQxVy1g=",
+  "Hash": "myyrBeXR/Ldmij0liEgFXJ4ltSgcymdZM1TP7OeyA38=",
   "Source": "Shoper.WebApp",
   "BasePath": "_content/Shoper.WebApp",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/AFACAR.jpg",
+      "SourceId": "Shoper.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/",
+      "BasePath": "_content/Shoper.WebApp",
+      "RelativePath": "img/AFACAR#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "il2xwtuml7",
+      "Integrity": "Zp8Om89CaR5cppUmJ5h21i3Ojjwh/1r1LArtlIOMpWw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/AFACAR.jpg"
     },
     {
       "Identity": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/carousel-1.jpg",
@@ -3264,6 +3285,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "img/AFACAR.il2xwtuml7.jpg",
+      "AssetFile": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/AFACAR.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1355864"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Zp8Om89CaR5cppUmJ5h21i3Ojjwh/1r1LArtlIOMpWw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Apr 2025 23:04:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "il2xwtuml7"
+        },
+        {
+          "Name": "label",
+          "Value": "img/AFACAR.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Zp8Om89CaR5cppUmJ5h21i3Ojjwh/1r1LArtlIOMpWw="
+        }
+      ]
+    },
+    {
+      "Route": "img/AFACAR.jpg",
+      "AssetFile": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/AFACAR.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1355864"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Zp8Om89CaR5cppUmJ5h21i3Ojjwh/1r1LArtlIOMpWw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Apr 2025 23:04:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Zp8Om89CaR5cppUmJ5h21i3Ojjwh/1r1LArtlIOMpWw="
         }
       ]
     },
@@ -14606,7 +14709,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 06:54:50 GMT"
+          "Value": "Mon, 21 Apr 2025 22:40:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14643,7 +14746,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 06:54:50 GMT"
+          "Value": "Mon, 21 Apr 2025 22:40:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14680,7 +14783,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 06:54:50 GMT"
+          "Value": "Mon, 21 Apr 2025 22:40:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14725,7 +14828,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Mar 2025 06:54:50 GMT"
+          "Value": "Mon, 21 Apr 2025 22:40:42 GMT"
         },
         {
           "Name": "Cache-Control",

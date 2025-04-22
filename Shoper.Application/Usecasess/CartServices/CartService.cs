@@ -14,14 +14,15 @@ public class CartService: ICartService
     private readonly IRepository<Product> _productRepository;
     private readonly ICartRepository _cartRepository;
 
-    public CartService(IRepository<Cart> cartRepository, IRepository<CartItem> cartItemRepository, IRepository<Customer> customerRepository, IRepository<Product> productRepository, ICartRepository cartRepository1)
+    public CartService(IRepository<Cart> repository, IRepository<CartItem> itemRepository, IRepository<Customer> customerRepository, IRepository<Product> productRepository, ICartRepository cartRepository)
     {
-        _repository = cartRepository;
-        _itemRepository = cartItemRepository;
+        _repository = repository;
+        _itemRepository = itemRepository;
         _customerRepository = customerRepository;
         _productRepository = productRepository;
-        _cartRepository = cartRepository1;
+        _cartRepository = cartRepository;
     }
+
 
     public async Task<List<ResultCartDto>> GetAllCartAsync()
     {

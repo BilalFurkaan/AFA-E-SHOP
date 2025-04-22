@@ -231,6 +231,7 @@
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.csproj.CoreCompileInputs.cache
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.MvcApplicationPartsAssemblyInfo.cs
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.sourcelink.json
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/scopedcss/bundle/Shoper.WebApi.styles.css
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/staticwebassets.build.json
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/staticwebassets.development.json
@@ -247,4 +248,3 @@
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.pdb
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.genruntimeconfig.cache
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/ref/Shoper.WebApi.dll
-/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.sourcelink.json

@@ -8,9 +8,9 @@
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.Application.AssemblyInfoInputs.cache
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.Application.AssemblyInfo.cs
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.Application.csproj.CoreCompileInputs.cache
+/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.Application.sourcelink.json
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.A.F1C4A0FE.Up2Date
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.Application.dll
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/refint/Shoper.Application.dll
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.Application.pdb
 /Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/ref/Shoper.Application.dll
-/Users/bilalfurkankaraca/Desktop/Shoper/Shoper.Application/obj/Debug/net8.0/Shoper.Application.sourcelink.json

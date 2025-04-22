@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/AFACAR.jpg",
+      "PackagePath": "staticwebassets/img/AFACAR.jpg"
+    },
+    {
       "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/Garden.jpg",
       "PackagePath": "staticwebassets/img/Garden.jpg"
     },

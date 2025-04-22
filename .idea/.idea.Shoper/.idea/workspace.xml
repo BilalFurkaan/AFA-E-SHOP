@@ -13,11 +13,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="306aa5d7-b09a-408c-9683-2518216de4a6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shoper/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shoper/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shoper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shoper/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.Persistence.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/bin/Debug/net8.0/Shoper.WebApi.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/Controllers/CartController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/ref/Shoper.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/ref/Shoper.WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/refint/Shoper.WebApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApi/obj/Debug/net8.0/refint/Shoper.WebApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Domain.dll" afterDir="false" />
@@ -26,16 +41,23 @@
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.Persistence.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/bin/Debug/net8.0/Shoper.WebApp.staticwebassets.runtime.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/Shoper.WebApp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/ref/Shoper.WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/ref/Shoper.WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/refint/Shoper.WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/refint/Shoper.WebApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shoper.Application/Interfaces/ICartItemRepository/ICartItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/Interfaces/ICartItemRepository/ICartItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shoper.Application/Usecasess/CartItemServices/CartItemService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/Usecasess/CartItemServices/CartItemService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shoper.Application/Usecasess/CartItemServices/ICartItemService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/Usecasess/CartItemServices/ICartItemService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.build.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets/msbuild.Shoper.WebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets/msbuild.Shoper.WebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets/msbuild.Shoper.WebApp.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Shoper.WebApp/obj/Debug/net8.0/staticwebassets/msbuild.Shoper.WebApp.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shoper.Application/Usecasess/CartServices/CartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/Usecasess/CartServices/CartService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/bin/Debug/net8.0/Shoper.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/bin/Debug/net8.0/Shoper.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/bin/Debug/net8.0/Shoper.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/bin/Debug/net8.0/Shoper.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/bin/Debug/net8.0/Shoper.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/bin/Debug/net8.0/Shoper.Domain.dll" afterDir="false" />
@@ -43,6 +65,7 @@
       <change beforePath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/Shoper.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/ref/Shoper.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Application/obj/Debug/net8.0/ref/Shoper.Application.dll" afterDir="false" />
@@ -51,11 +74,11 @@
       <change beforePath="$PROJECT_DIR$/Shoper.Domain/bin/Debug/net8.0/Shoper.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/bin/Debug/net8.0/Shoper.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/Shoper.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/ref/Shoper.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/ref/Shoper.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/refint/Shoper.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Domain/obj/Debug/net8.0/refint/Shoper.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shoper.Persistence/Repositories/CartItemsRepository/CartItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/Repositories/CartItemsRepository/CartItemsRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/bin/Debug/net8.0/Shoper.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/bin/Debug/net8.0/Shoper.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/bin/Debug/net8.0/Shoper.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/bin/Debug/net8.0/Shoper.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/bin/Debug/net8.0/Shoper.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/bin/Debug/net8.0/Shoper.Domain.dll" afterDir="false" />
@@ -65,7 +88,7 @@
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/Shoper.Persistence.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/ref/Shoper.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shoper.Persistence/obj/Debug/net8.0/ref/Shoper.Persistence.dll" afterDir="false" />
@@ -98,12 +121,15 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8056cd3f452fefb9834f05cdb275b762dd41f27b7766cd71174e78592dc495b/Monitor.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2tqgCBFsDxSS6gUjSth87N6o3iD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -126,7 +152,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Shoper.WebApp: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Shoper.WebApp: https">
     <configuration name="Shoper.WebApi: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation/Shoper.WebApi/Shoper.WebApi.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -274,7 +300,14 @@
       <workItem from="1744659027297" duration="70000" />
       <workItem from="1745060686415" duration="709000" />
       <workItem from="1745063106466" duration="7679000" />
-      <workItem from="1745156390826" duration="5766000" />
+      <workItem from="1745156390826" duration="7157000" />
+      <workItem from="1745164671979" duration="595000" />
+      <workItem from="1745264908440" duration="2031000" />
+      <workItem from="1745274832181" duration="2464000" />
+      <workItem from="1745303593575" duration="250000" />
+      <workItem from="1745318625849" duration="2530000" />
+      <workItem from="1745329003844" duration="44000" />
+      <workItem from="1745329061413" duration="2218000" />
     </task>
     <task id="LOCAL-00001" summary="Cart Update">
       <option name="closed" value="true" />
@@ -296,5 +329,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Cart Update" />
     <option name="LAST_COMMIT_MESSAGE" value="Cart Update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
