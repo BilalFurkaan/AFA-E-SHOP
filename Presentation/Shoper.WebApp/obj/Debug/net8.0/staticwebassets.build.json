@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "myyrBeXR/Ldmij0liEgFXJ4ltSgcymdZM1TP7OeyA38=",
+  "Hash": "DeKBjaIbxh1qeBEbMjSSuaH9O0Jr08QtpSmNqZkk7rs=",
   "Source": "Shoper.WebApp",
   "BasePath": "_content/Shoper.WebApp",
   "Mode": "Default",
@@ -351,6 +351,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/headphone.jpg"
+    },
+    {
+      "Identity": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/logo.png",
+      "SourceId": "Shoper.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/",
+      "BasePath": "_content/Shoper.WebApp",
+      "RelativePath": "img/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hprbdmh5yo",
+      "Integrity": "+wmHrj/AD+6GPOR3olaw9UVtxqQUIyEIcIjSl7IoQfo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/logo.png"
     },
     {
       "Identity": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/offer-1.png",
@@ -4187,6 +4208,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-XnQVqudB0hFmsj9IvPHSsA4oPgmO0e1GB9c1cCt5Whw="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.hprbdmh5yo.png",
+      "AssetFile": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1328777"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+wmHrj/AD+6GPOR3olaw9UVtxqQUIyEIcIjSl7IoQfo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Apr 2025 15:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hprbdmh5yo"
+        },
+        {
+          "Name": "label",
+          "Value": "img/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+wmHrj/AD+6GPOR3olaw9UVtxqQUIyEIcIjSl7IoQfo="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.png",
+      "AssetFile": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1328777"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+wmHrj/AD+6GPOR3olaw9UVtxqQUIyEIcIjSl7IoQfo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Apr 2025 15:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+wmHrj/AD+6GPOR3olaw9UVtxqQUIyEIcIjSl7IoQfo="
         }
       ]
     },

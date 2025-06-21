@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets/img/headphone.jpg"
     },
     {
+      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/logo.png",
+      "PackagePath": "staticwebassets/img/logo.png"
+    },
+    {
       "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/offer-1.png",
       "PackagePath": "staticwebassets/img/offer-1.png"
     },

@@ -12,5 +12,6 @@ public interface ICartItemService
     Task <List<ResultCartItemDto>>GetByCartIdCartItemsAsync(int cartId);
     Task UpdateQuantityAsync(int cartId, int productId, int quantity);
     Task<bool> CheckCartItems(int cartId, int productId);
+    Task UpdateQuantityOnCart(UpdateCartItemDto dto);
    
 }

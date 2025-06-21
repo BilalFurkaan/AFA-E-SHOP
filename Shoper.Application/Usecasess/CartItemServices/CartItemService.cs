@@ -49,7 +49,7 @@ public class CartItemService: ICartItemService
             CartId = model.CartId,
             ProductId = model.ProductId,
             Quantity = model.Quantity,
-            TotalPrice = model.TotalPrice,
+            TotalPrice = model.TotalPrice * model.Quantity
         };
             await _repository.CreateAsync(cartItem);
     }
@@ -78,12 +78,21 @@ public class CartItemService: ICartItemService
 
     public async Task UpdateQuantityAsync(int cartId, int productId, int quantity)
     {
-        await _cartItemRepository.UpdateQuantityAsync(cartId, productId, quantity);
+        var cart = await _repository.GetByIdAsync(cartId);
+        var tempprice= cart.TotalPrice / cart.Quantity; // 100 / 1 = 100
+        cart.Quantity += quantity; // 1 + 1 = 2
+        cart.TotalPrice =tempprice * cart.Quantity; // 100 * 2 = 200
+        await _repository.UpdateAsync(cart);
     }
 
     public async Task<bool> CheckCartItems(int cartId, int productId)
     {
         var value= await _cartItemRepository.CheckCartItemAsync(cartId, productId);
         return value;
+    }
+
+    public async Task UpdateQuantityOnCart(UpdateCartItemDto dto)
+    {
+        await _cartItemRepository.UpdateQuantityOnCartAsync(dto);
     }
 }
