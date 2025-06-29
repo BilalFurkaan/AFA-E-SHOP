@@ -3,10 +3,12 @@ using Shoper.Persistence.Context;
 using Shoper.Persistence.Repositories;
 using Shoper.Persistence.Repositories.CartItemsRepository;
 using Shoper.Persistence.Repositories.CartRepository;
+using Shoper.Persistence.Repositories.OrderRepository;
 using Shoper.Persistence.Repositories.ProductsRepository;
 using ShoperApplication.Interfaces;
 using ShoperApplication.Interfaces.ICartItemRepository;
 using ShoperApplication.Interfaces.ICartRepository;
+using ShoperApplication.Interfaces.IOrderRepository;
 using ShoperApplication.Interfaces.IProductsRepository;
 using ShoperApplication.Usecasess.CartItemServices;
 using ShoperApplication.Usecasess.CartServices;
@@ -32,9 +34,7 @@ builder.Services.AddScoped<ICartItemService, CartItemService>();
 builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 builder.Services.AddScoped<ICartRepository, CartsRepository>();
 builder.Services.AddScoped<ICartItemRepository, CartItemsRepository>();
-
-
-
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

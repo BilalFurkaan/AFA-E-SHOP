@@ -64,6 +64,13 @@ public class CartService: ICartService
     public async Task<GetByIdCartDto> GetByIdCartAsync(int id)
     {
         var cart = await _repository.GetByIdAsync(id);
+        
+        // Cart bulunamazsa null döndür
+        if (cart == null)
+        {
+            return null;
+        }
+        
         var cartItem = await _itemRepository.GetAllAsync();
         var customer = await _customerRepository.GetByIdAsync(id);
         var result = new GetByIdCartDto

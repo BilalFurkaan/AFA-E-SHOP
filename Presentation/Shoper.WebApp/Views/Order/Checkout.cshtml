@@ -1,0 +1,130 @@
+@model ShoperApplication.Dtos.CartDtos.GetByIdCartDto
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>First Name</label>
+                        <input class="form-control" type="text" placeholder="Name">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Last Name</label>
+                        <input class="form-control" type="text" placeholder="Surname">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>E-mail</label>
+                        <input class="form-control" type="text" placeholder="example@email.com">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Phone No</label>
+                        <input class="form-control" type="text" placeholder="+90 555 555 55 55">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Cities</label>
+                        <select class="custom-select" id="city">
+                            <option selected value="0">Select City</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Town</label>
+                        <select class="custom-select" id="town">
+                            <option selected value="0">Select Town</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Address Detail </label>
+                        <input class="form-control" type="text" placeholder="Street, Building, Apartment">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card border-secondary mb-5">
+                <div class="card-header bg-secondary border-0">
+                    <h4 class="font-weight-semi-bold m-0">Order Total</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="font-weight-medium mb-3">Products</h5>
+                    @if (Model?.CartItems != null)
+                    {
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <div class="d-flex justify-content-between">
+                                <p>@item.Product.ProductName | @item.Product.Price X @item.Quantity</p>
+                                <p>$@item.TotalPrice</p>
+                            </div>
+                        }
+                    }
+                    <hr class="mt-0">
+                    <div class="d-flex justify-content-between mb-3 pt-1">
+                        <h6 class="font-weight-medium">Subtotal</h6>
+                        <h6 class="font-weight-medium">$@(Model?.TotalAmount ?? 0)</h6>
+                    </div>
+                </div>
+                <div class="card-footer border-secondary bg-transparent">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5 class="font-weight-bold">Total</h5>
+                        <h5 class="font-weight-bold">$@(Model?.TotalAmount ?? 0)</h5>
+                    </div>
+                    <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Order/GetCity',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data.data);
+                var cityDropdown = $('#city');
+                cityDropdown.empty();
+                cityDropdown.append('<option selected value="0">Select City</option>'); 
+                $.each(data.data, function (index, city) {
+                    console.log(index, city);
+                    cityDropdown.append($('<option></option>').attr('value', city.cityId).text(city.cityName));
+                });
+            },
+            error: function (xhr, status, error) {
+                console.log('An error occurred while loading cities: ' + error);
+            }
+        });
+    });
+
+    $('#city').change(function() {
+        var cityId = $(this).val();
+        console.log('select city ID:', cityId);
+
+        if (cityId != "0") {
+            $.ajax({
+                url: '/Order/GetTown',
+                type: 'GET',
+                data: { cityId: cityId },
+                dataType: 'json',
+                success: function (data) {
+                    console.log('town data:', data.data);
+                    var townDropdown = $('#town');
+                    townDropdown.empty();
+                    townDropdown.append('<option selected value="0">Select Town</option>');
+                    $.each(data.data, function (index, town) {
+                        console.log(index, town);
+                        townDropdown.append($('<option></option>').attr('value', town.townId).text(town.townName));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.log('Town Error: ' + error);
+                }
+            });
+        } else {
+            var townDropdown = $('#town');
+            townDropdown.empty();
+            townDropdown.append('<option selected value="0">Select Town</option>');
+        }
+    });
+</script>

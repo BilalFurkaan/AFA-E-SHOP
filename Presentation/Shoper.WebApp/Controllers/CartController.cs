@@ -20,6 +20,13 @@ namespace Shoper.WebApp.Controllers
         public async Task<ActionResult> Index(int id = 1)
         {
             var value = await _cartService.GetByIdCartAsync(id);
+            
+            // Cart bulunamazsa hata sayfasına yönlendir
+            if (value == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
             return View(value);
         }
 

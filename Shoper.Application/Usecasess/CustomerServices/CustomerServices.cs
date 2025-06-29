@@ -22,6 +22,7 @@ public class CustomerServices: ICustomerServices
             FirstName = x.FirstName,
             LastName = x.LastName,
             Email = x.Email,
+            PhoneNumber = x.PhoneNumber,
             //Orders = x.Orders
         }).ToList();
     }
@@ -35,6 +36,7 @@ public class CustomerServices: ICustomerServices
             FirstName = values.FirstName,
             LastName = values.LastName,
             Email = values.Email,
+            PhoneNumber = values.PhoneNumber,
             //Orders = values.Orders
 
         };
@@ -46,7 +48,8 @@ public class CustomerServices: ICustomerServices
         {
             FirstName = createCustomerDto.FirstName,
             LastName = createCustomerDto.LastName,
-            Email = createCustomerDto.Email
+            Email = createCustomerDto.Email,
+            PhoneNumber = createCustomerDto.PhoneNumber,
             
         });
     }
@@ -57,6 +60,7 @@ public class CustomerServices: ICustomerServices
         values.FirstName = updateCustomerDto.FirstName;
         values.LastName = updateCustomerDto.LastName;
         values.Email = updateCustomerDto.Email;
+        values.PhoneNumber = updateCustomerDto.PhoneNumber;
         //values.Orders = updateCustomerDto.Orders;
         await _repository.UpdateAsync(values);
     }

@@ -1,7 +1,10 @@
 using Shoper.Domain.Entities;
+using ShoperApplication.Dtos.CityDtos;
 using ShoperApplication.Dtos.OrderDtos;
 using ShoperApplication.Dtos.OrderItemDtos;
+using ShoperApplication.Dtos.TownDtos;
 using ShoperApplication.Interfaces;
+using ShoperApplication.Interfaces.IOrderRepository;
 
 namespace ShoperApplication.Usecasess.OrderServices;
 
@@ -11,13 +14,16 @@ public class OrderServices: IOrderServices
     private readonly IRepository<OrderItem> _orderItemRepository;
     private readonly IRepository<Customer> _customerRepository;
     private readonly IRepository<Product> _productRepository;
+    private readonly IOrderRepository _orderRepository;
+    
 
-    public OrderServices(IRepository<Order> repository, IRepository<OrderItem> orderItemRepository, IRepository<Customer> customerRepository, IRepository<Product> productRepository)
+    public OrderServices(IRepository<Order> repository, IRepository<OrderItem> orderItemRepository, IRepository<Customer> customerRepository, IRepository<Product> productRepository, IOrderRepository orderRepository)
     {
         _repository = repository;
         _orderItemRepository = orderItemRepository;
         _customerRepository = customerRepository;
         _productRepository = productRepository;
+        _orderRepository = orderRepository;
     }
 
     public async Task<List<ResultOrderDto>> GetAllOrderAsync()
@@ -32,11 +38,18 @@ public class OrderServices: IOrderServices
             {
                 OrderId = item.OrderId,
                 OrderDate = item.OrderDate,
-                TotalAmount = item.TotalAmount,
+                TotalAmount =item.TotalAmount,
                 OrderStatus = item.OrderStatus,
+                //  BillingAdress = model.BillingAdress,
                 ShippingAdress = item.ShippingAdress,
+                ShippingCityId = item.ShippingCityId,
+                ShippingTownId = item.ShippingTownId,
+                // PaymentMethod = model.PaymentMethod,
                 CustomerId = item.CustomerId,
-                Customer= orderCustomer,
+                CustomerName = item.CustomerName,
+                CustomerSurname = item.CustomerSurname,
+                CustomerEmail = item.CustomerEmail,
+                CustomerPhone = item.CustomerPhone,
                 OrderItems = new List<ResultOrderItemDto>()
             };
             foreach (var value in item.OrderItems)
@@ -64,14 +77,20 @@ public class OrderServices: IOrderServices
         var ordercustomer=await _customerRepository.GetByIdAsync(values.CustomerId);
         var result=new GetByIdOrderDto
         {
+            OrderId = values.OrderId,
             OrderDate = values.OrderDate,
-            TotalAmount = values.TotalAmount,
+            TotalAmount =values.TotalAmount,
             OrderStatus = values.OrderStatus,
-           // BillingAdress = values.BillingAdress,
+            //  BillingAdress = values.BillingAdress,
             ShippingAdress = values.ShippingAdress,
-           // PaymentMethod =  values.PaymentMethod,
+            ShippingCityId = values.ShippingCityId,
+            ShippingTownId = values.ShippingTownId,
+            // PaymentMethod = values.PaymentMethod,
             CustomerId = values.CustomerId,
-            Customer = ordercustomer,
+            CustomerName = values.CustomerName,
+            CustomerSurname = values.CustomerSurname,
+            CustomerEmail = values.CustomerEmail,
+            CustomerPhone = values.CustomerPhone,
             OrderItems = new List<ResultOrderItemDto>()
         };
         foreach (var item in result.OrderItems)
@@ -98,13 +117,20 @@ public class OrderServices: IOrderServices
         decimal sum = 0;
         var order = new Order()
         {
-            OrderDate = model.OrderDate,
+            OrderDate = DateTime.Now,
             TotalAmount =sum, //model.TotalAmount, servis yazılıcak otomatik olarak hesaplanacak buradan elle girilmeyecek.
             OrderStatus = model.OrderStatus,
           //  BillingAdress = model.BillingAdress,
             ShippingAdress = model.ShippingAdress,
+            ShippingCityId = model.ShippingCityId,
+            ShippingTownId = model.ShippingTownId,
            // PaymentMethod = model.PaymentMethod,
-            CustomerId = model.CustomerId
+            CustomerId = model.CustomerId,
+            CustomerName = model.CustomerName,
+            CustomerSurname = model.CustomerSurname,
+            CustomerEmail = model.CustomerEmail,
+            CustomerPhone = model.CustomerPhone,
+            
         };
         await _repository.CreateAsync(order);
         foreach (var item in model.OrderItems)
@@ -159,5 +185,27 @@ public class OrderServices: IOrderServices
        await _repository.DeleteAsync(values);
        
     }
-    
+
+    public async Task<List<ResultCityDto>> GetAllCitiesAsync()
+    {
+        var cities= await _orderRepository.GetCities();
+        return cities.Select(x=> new ResultCityDto
+        {
+            Id = x.Id,
+            CityId = x.CityId,
+            CityName = x.CityName
+        }).ToList();
+    }
+
+    public async Task<List<GetByIdTownDto>> GetTownsAsync(int cityId)
+    {
+        var towns = await _orderRepository.GetTowns(cityId);
+        return towns.Select(x => new GetByIdTownDto
+        {
+            TownId = x.TownId,
+            TownName = x.TownName,
+            CityId = x.CityId
+        }).ToList();
+        
+    }
 }
