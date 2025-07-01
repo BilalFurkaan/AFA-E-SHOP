@@ -7,35 +7,35 @@
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label>First Name</label>
-                        <input class="form-control" type="text" placeholder="Name">
+                        <input class="form-control" type="text" placeholder="Name" name="customerName" id="customerName" required >
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Last Name</label>
-                        <input class="form-control" type="text" placeholder="Surname">
+                        <input class="form-control" type="text" placeholder="Surname" name="customerSurname" id="customerSurname" required >
                     </div>
                     <div class="col-md-6 form-group">
                         <label>E-mail</label>
-                        <input class="form-control" type="text" placeholder="example@email.com">
+                        <input class="form-control" type="text" placeholder="example@email.com" name="customerEmail" id="customerEmail" required>
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Phone No</label>
-                        <input class="form-control" type="text" placeholder="+90 555 555 55 55">
+                        <input class="form-control" type="text" placeholder="+90 555 555 55 55" name="customerPhone" id="customerPhone" required>
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Cities</label>
-                        <select class="custom-select" id="city">
+                        <select class="custom-select" id="city" name="shippingCityId">
                             <option selected value="0">Select City</option>
                         </select>
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Town</label>
-                        <select class="custom-select" id="town">
+                        <select class="custom-select" id="town" name="shippingTownId">
                             <option selected value="0">Select Town</option>
                         </select>
                     </div>
                     <div class="col-md-12 form-group">
                         <label>Address Detail </label>
-                        <input class="form-control" type="text" placeholder="Street, Building, Apartment">
+                        <input class="form-control" type="text" placeholder="Street, Building, Apartment" name="shippingAdress" id="shippingAdress">
                     </div>
                 </div>
             </div>
@@ -68,13 +68,14 @@
                         <h5 class="font-weight-bold">Total</h5>
                         <h5 class="font-weight-bold">$@(Model?.TotalAmount ?? 0)</h5>
                     </div>
-                    <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+                    <button id="completeOrder" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
     $(document).ready(function () {
         $.ajax({
@@ -126,5 +127,41 @@
             townDropdown.empty();
             townDropdown.append('<option selected value="0">Select Town</option>');
         }
+    });
+    $('#completeOrder').click(function (e) {
+        e.preventDefault();
+        var orderData = {
+            customerName: $('#customerName').val(),
+            customerSurname: $('#customerSurname').val(),
+            customerEmail: $('#customerEmail').val(),
+            customerPhone: $('#customerPhone').val(),
+            shippingCityId: $('#city').val(),
+            shippingTownId: $('#town').val(),
+            shippingAdress: $('#shippingAdress').val(),
+            totalAmount: '@Model.TotalAmount'  // Assuming this is coming from your model
+        };
+        var cartId = @Model.CartId;
+        
+        if (!orderData.customerName || !orderData.customerSurname || !orderData.customerEmail ||
+            !orderData.customerPhone || !orderData.shippingCityId || orderData.shippingCityId === "0" ||
+            !orderData.shippingTownId || !orderData.shippingAdress) {
+            toastr.error('Please Entry All Rows.');
+            return;
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/Order/CreateOrder',  // Replace with your controller's name
+            data: {dto:orderData,cartId:cartId
+            },
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                alert('Successfully Placed Order');
+                window.location.href = '@Url.Action("Index", "Home")';
+            },
+            error: function (response) {
+                alert('Error placing order.');
+            }
+        });
     });
 </script>

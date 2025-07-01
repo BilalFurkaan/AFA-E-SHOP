@@ -1,0 +1,127 @@
+@{
+    Layout = null;
+}
+<style>
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+        font-family: 'Poppins', sans-serif;
+    }
+    .login-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-card {
+        background: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+        padding: 2.5rem 2rem 2rem 2rem;
+        max-width: 370px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    .login-card .login-icon {
+        width: 64px;
+        height: 64px;
+        background: #D19C97;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem auto;
+        color: #fff;
+        font-size: 2rem;
+        box-shadow: 0 2px 8px rgba(209,156,151,0.15);
+    }
+    .login-card h2 {
+        font-weight: 700;
+        text-align: right;
+        margin-bottom: 1.2rem;
+        color: #1C1C1C;
+        font-size: 1.35rem;
+        letter-spacing: 0.5px;
+    }
+    .login-card form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .login-card .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1.1rem;
+        width: 100%;
+    }
+    .login-card .form-group label {
+        font-weight: 500;
+        color: #1C1C1C;
+        margin-bottom: 0.35rem;
+        font-size: 0.98rem;
+        align-self: flex-start;
+    }
+    .login-card .form-control {
+        border-radius: 1.2rem;
+        border: 1px solid #e0e7ef;
+        padding: 0.7rem 1rem;
+        font-size: 0.98rem;
+        background: #f8fafc;
+        width: 100%;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+    }
+    .login-card .form-control:focus {
+        border-color: #D19C97;
+        box-shadow: 0 0 0 2px #f3e3e1;
+        background: #fff;
+    }
+    .login-card .btn-primary {
+        background: #D19C97;
+        border: none;
+        border-radius: 2rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 0.7rem 2.2rem;
+        margin-top: 0.5rem;
+        transition: background 0.2s;
+        align-self: flex-end;
+    }
+    .login-card .btn-primary:hover {
+        background: #ba6a62;
+    }
+    .login-card .register-link {
+        display: block;
+        text-align: center;
+        margin-top: 0.3rem;
+        color: #D19C97;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .login-card .register-link:hover {
+        text-decoration: underline;
+        color: #ba6a62;
+    }
+</style>
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-icon">
+            <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#D19C97"/><path d="M16 17.5c2.485 0 4.5-2.015 4.5-4.5S18.485 8.5 16 8.5 11.5 10.515 11.5 13s2.015 4.5 4.5 4.5Zm0 1.5c-2.97 0-9 1.485-9 4.5V26h18v-2.5c0-3.015-6.03-4.5-9-4.5Z" fill="#fff"/></svg>
+        </div>
+        <form method="post" action="/Account/Login">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input class="form-control" type="text" placeholder="example@email.com" name="email" id="email" required autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input class="form-control" type="password" placeholder="Şifrenizi Giriniz." name="password" id="password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+        </form>
+        <a href="/Account/Register" class="register-link">Üye değil misiniz? Üye Ol</a>
+    </div>
+</div>

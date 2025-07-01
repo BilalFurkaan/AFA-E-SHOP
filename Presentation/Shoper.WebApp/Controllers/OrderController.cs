@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ShoperApplication.Dtos.OrderDtos;
+using ShoperApplication.Dtos.OrderItemDtos;
 using ShoperApplication.Usecasess.CartServices;
 using ShoperApplication.Usecasess.OrderServices;
 
@@ -31,11 +32,25 @@ public class OrderController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateOrder(CreateOrderDto dto)
+    public async Task<IActionResult> CreateOrder(CreateOrderDto dto,int cartId)
     {
-        dto.OrderStatus="Order has been received";
-        _orderServices.CreateOrderAsync(dto);
-        return RedirectToAction("Index", "Home");
+        try
+        { 
+            var cart = await _cartService.GetByIdCartAsync(cartId);
+            var result = cart.CartItems.Select
+                (item => new CreateOrderItemDto { ProductId = item.ProductId, Quantity = item.Quantity, TotalPrice = item.TotalPrice, }).ToList();
+            dto.CustomerId = 1;
+            dto.OrderItems = result;
+            dto.OrderStatus="Pending";
+            await _orderServices.CreateOrderAsync(dto);
+            return Json(new { success = true });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return RedirectToAction("Error", "Home",ex.Message);
+        }
+
     }
     public async Task< IActionResult> GetCity()
     {

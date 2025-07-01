@@ -248,3 +248,8 @@
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.pdb
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/Shoper.WebApi.genruntimeconfig.cache
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/obj/Debug/net8.0/ref/Shoper.WebApi.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApi/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll

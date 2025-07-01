@@ -117,7 +117,7 @@ public class OrderServices: IOrderServices
         decimal sum = 0;
         var order = new Order()
         {
-            OrderDate = DateTime.Now,
+            OrderDate = DateTime.UtcNow,
             TotalAmount =sum, //model.TotalAmount, servis yazılıcak otomatik olarak hesaplanacak buradan elle girilmeyecek.
             OrderStatus = model.OrderStatus,
           //  BillingAdress = model.BillingAdress,

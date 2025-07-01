@@ -270,3 +270,8 @@
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
