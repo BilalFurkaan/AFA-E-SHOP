@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>AFA Shop</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<!-- Favicon -->
     <link href="/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
@@ -29,29 +28,21 @@
     <div class="row bg-secondary py-2 px-xl-5">
         <div class="col-lg-6 d-none d-lg-block">
             <div class="d-inline-flex align-items-center">
-                <a class="text-dark" href="">FAQs</a>
-                <span class="text-muted px-2">|</span>
-                <a class="text-dark" href="">Help</a>
-                <span class="text-muted px-2">|</span>
-                <a class="text-dark" href="">Support</a>
             </div>
         </div>
         <div class="col-lg-6 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
-                <a class="text-dark px-2" href="">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a class="text-dark px-2" href="">
+                <a class="text-dark px-2" href="https://x.com/BFurkaan1">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a class="text-dark px-2" href="">
+                <a class="text-dark px-2" href="https://www.linkedin.com/in/bilal-furkan-karaca/">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a class="text-dark px-2" href="">
+                <a class="text-dark px-2" href="https://www.instagram.com/bilalfurkaan/">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="text-dark pl-2" href="">
-                    <i class="fab fa-youtube"></i>
+                <a class="text-dark pl-2" href="https://github.com/BilalFurkaan">
+                    <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
@@ -127,25 +118,56 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                <a href="/Cart/Index" class="dropdown-item">Shopping Cart</a>
+                                <a href="/Order/Checkout" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="/Account/Login" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
-                            <span style="display: flex; align-items: center;">
-                                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="9" cy="9" r="9" fill="#D19C97"/><path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/></svg>
+                        @if (User.Identity.Name == null)
+                        {
+                            <a href="/Account/Login" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
+                                <span style="display: flex; align-items: center;">
+                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="9" cy="9" r="9" fill="#D19C97"/><path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/></svg>
+                                </span>
+                                Login
+                            </a>
+                            <a href="/Account/Register" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
+                                <span style="display: flex; align-items: center;">
+                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="9" cy="9" r="9" fill="#D19C97"/><path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/></svg>
+                                </span>
+                                Register
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="nav-item nav-link" style="color: #D19C97; font-weight: 500; display: flex; align-items: center; gap: 6px;">
+                                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
+                                    <circle cx="9" cy="9" r="9" fill="#D19C97"/>
+                                    <path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/>
+                                </svg>
+                                @User.Identity.Name
                             </span>
-                            Login
-                        </a>
-                        <a href="/Account/Register" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
-                            <span style="display: flex; align-items: center;">
-                                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="9" cy="9" r="9" fill="#D19C97"/><path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/></svg>
-                            </span>
-                            Register
-                        </a>
+                            <a href="/Account/Profile" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
+                                <span style="display: flex; align-items: center;">
+                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
+                                        <circle cx="9" cy="9" r="9" fill="#D19C97"/>
+                                        <path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/>
+                                    </svg>
+                                </span>
+                                Profile
+                            </a>
+                            <a href="/Account/Logout" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
+                                <span style="display: flex; align-items: center;">
+                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
+                                        <circle cx="9" cy="9" r="9" fill="#D19C97"/>
+                                        <path d="M6.5 9h5m-2.5-2.5L11 9l-2 2.5M12 15H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                Exit
+                            </a>
+                        }
                     </div>
                 </div>
             </nav>
@@ -178,8 +200,6 @@
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="/Home/Index"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
                             <a class="text-dark mb-2" href="/Cart/Index"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
                             <a class="text-dark mb-2" href="/Order/Checkout"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
                             <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>

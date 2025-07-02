@@ -116,12 +116,28 @@
                 <label for="email">E-mail</label>
                 <input class="form-control" type="text" placeholder="example@email.com" name="email" id="email" required autocomplete="username">
             </div>
-            <div class="form-group">
-                <label for="password">Şifre</label>
-                <input class="form-control" type="password" placeholder="Şifrenizi Giriniz." name="password" id="password" required autocomplete="current-password">
+            <div class="form-group" style="position:relative;">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" placeholder="Enter your password" name="password" id="password" required autocomplete="current-password">
+                <span class="toggle-password" onclick="togglePassword('password', this)" style="position:absolute; right:16px; top:38px; cursor:pointer;">
+                    <svg id="eye-password" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11C2.73 6.61 6.61 3.5 11 3.5c4.39 0 8.27 3.11 10 7.5-1.73 4.39-5.61 7.5-10 7.5-4.39 0-8.27-3.11-10-7.5Z" stroke="#D19C97" stroke-width="2"/><circle cx="11" cy="11" r="3" stroke="#D19C97" stroke-width="2"/></svg>
+                </span>
             </div>
-            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <a href="/Account/Register" class="register-link">Üye değil misiniz? Üye Ol</a>
+        <a href="/Account/Register" class="register-link">Are you not a member? Sign up.</a>
     </div>
 </div>
+<script>
+function togglePassword(inputId, el) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    if (input.type === 'password') {
+        input.type = 'text';
+        el.querySelector('svg').style.opacity = 0.5;
+    } else {
+        input.type = 'password';
+        el.querySelector('svg').style.opacity = 1;
+    }
+}
+</script>

@@ -14,6 +14,7 @@ using ShoperApplication.Interfaces.ICartItemRepository;
 using ShoperApplication.Interfaces.ICartRepository;
 using ShoperApplication.Interfaces.IOrderRepository;
 using ShoperApplication.Interfaces.IProductsRepository;
+using ShoperApplication.Usecasess.AccountServices;
 using ShoperApplication.Usecasess.CartItemServices;
 using ShoperApplication.Usecasess.CartServices;
 using ShoperApplication.Usecasess.CategoryServices;
@@ -26,6 +27,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
+builder.Services.AddScoped<IUserIdentityRepository, UserIdentityRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
@@ -34,6 +36,7 @@ builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<ICartItemService, CartItemService>();
 builder.Services.AddScoped<ICartItemRepository, CartItemsRepository>();
 builder.Services.AddScoped<IOrderServices, OrderServices>();
+builder.Services.AddScoped<IAccountServices, AccountServices>();
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 {
     var configuration = builder.Configuration;

@@ -105,31 +105,62 @@
         text-decoration: underline;
         color: #ba6a62;
     }
+    
 </style>
 <div class="login-container">
     <div class="login-card">
+        @if(ViewBag.Error != null) {
+            <div class="alert alert-danger" style="font-size:0.95rem; margin-bottom:1rem;">@ViewBag.Error</div>
+        }
         <div class="login-icon">
             <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#D19C97"/><path d="M16 17.5c2.485 0 4.5-2.015 4.5-4.5S18.485 8.5 16 8.5 11.5 10.515 11.5 13s2.015 4.5 4.5 4.5Zm0 1.5c-2.97 0-9 1.485-9 4.5V26h18v-2.5c0-3.015-6.03-4.5-9-4.5Z" fill="#fff"/></svg>
         </div>
         <form method="post" action="/Account/Register">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input class="form-control" type="text" placeholder="Enter your name" name="name" id="name" required autocomplete="given-name">
+                <label for="firstName">Name</label>
+                <input class="form-control" type="text" placeholder="Enter your name" name="firstName" id="firstName" required autocomplete="given-name">
             </div>
             <div class="form-group">
-                <label for="surname">Surname</label>
-                <input class="form-control" type="text" placeholder="Enter your surname" name="surname" id="surname" required autocomplete="family-name">
+                <label for="lastName">Surname</label>
+                <input class="form-control" type="text" placeholder="Enter your surname" name="lastName" id="lastName" required autocomplete="family-name">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input class="form-control" type="email" placeholder="Enter your email" name="email" id="email" required autocomplete="email">
             </div>
             <div class="form-group">
-                <label for="phone">Phone</label>
-                <input class="form-control" type="tel" placeholder="Enter your phone number" name="phone" id="phone" required autocomplete="tel">
+                <label for="phoneNumber">Phone No</label>
+                <input class="form-control" type="tel" placeholder="Enter your phone number" name="phoneNumber" id="phoneNumber" required autocomplete="tel">
+            </div>
+            <div class="form-group" style="position:relative;">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" placeholder="Enter your password" name="password" id="password" required autocomplete="new-password">
+                <span class="toggle-password" onclick="togglePassword('password', this)" style="position:absolute; right:16px; top:38px; cursor:pointer;">
+                    <svg id="eye-password" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11C2.73 6.61 6.61 3.5 11 3.5c4.39 0 8.27 3.11 10 7.5-1.73 4.39-5.61 7.5-10 7.5-4.39 0-8.27-3.11-10-7.5Z" stroke="#D19C97" stroke-width="2"/><circle cx="11" cy="11" r="3" stroke="#D19C97" stroke-width="2"/></svg>
+                </span>
+            </div>
+            <div class="form-group" style="position:relative;">
+                <label for="rePassword">Confirm Password</label>
+                <input class="form-control" type="password" placeholder="Enter your password again" name="rePassword" id="rePassword" required autocomplete="new-password">
+                <span class="toggle-password" onclick="togglePassword('rePassword', this)" style="position:absolute; right:16px; top:38px; cursor:pointer;">
+                    <svg id="eye-rePassword" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11C2.73 6.61 6.61 3.5 11 3.5c4.39 0 8.27 3.11 10 7.5-1.73 4.39-5.61 7.5-10 7.5-4.39 0-8.27-3.11-10-7.5Z" stroke="#D19C97" stroke-width="2"/><circle cx="11" cy="11" r="3" stroke="#D19C97" stroke-width="2"/></svg>
+                </span>
             </div>
             <a href="/Account/Login" class="register-link">Are you a member? Log in</a>
             <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
     </div>
 </div>
+<script>
+function togglePassword(inputId, el) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    if (input.type === 'password') {
+        input.type = 'text';
+        el.querySelector('svg').style.opacity = 0.5;
+    } else {
+        input.type = 'password';
+        el.querySelector('svg').style.opacity = 1;
+    }
+}
+</script>
