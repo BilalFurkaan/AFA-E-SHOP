@@ -7,7 +7,8 @@ public class AppDbContext:DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Shoper;Username=postgres;Password=10Furkan16.");
+        // TODO: Replace with your actual connection string
+        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Shoper;Username=your_username;Password=your_password");
     }
 
     public DbSet<Category> Categories { get; set; }
@@ -19,8 +20,6 @@ public class AppDbContext:DbContext
     public DbSet<CartItem>CartItems{ get; set; }
     public DbSet<City>Citys{ get; set; }
     public DbSet<Town>Towns{ get; set; }
-    
-    
-    
- 
-}
+    public DbSet<Subscriber> Subscribers { get; set; }
+    public DbSet<Help> Helps { get; set; }
+} 

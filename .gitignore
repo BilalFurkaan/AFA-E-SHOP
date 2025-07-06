@@ -1,8 +1,59 @@
-
 # macOS
 .DS_Store
+
+# ASP.NET Core
 *.sourcelink.json
 *.dll
 *.pdb
 bin/
 obj/
+
+# User Secrets
+secrets.json
+
+# Environment files
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Database Context Files with Connection Strings
+Shoper.Persistence/Context/AppDbContext.cs
+Shoper.Persistence/Context/Identity/AppIdentityDbContext.cs
