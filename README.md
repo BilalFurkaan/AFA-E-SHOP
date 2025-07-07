@@ -33,7 +33,7 @@ shoper/
 ### Backend
 - **ASP.NET Core 8.0** - Web framework
 - **Entity Framework Core 8.0** - ORM
-- **SQL Server** - Database
+- **PostgreSQL Server** - Database
 - **Identity Framework** - Authentication
 
 ### Frontend
