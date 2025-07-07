@@ -3,6 +3,8 @@ using ShoperApplication.Dtos.CartDtos;
 using ShoperApplication.Dtos.CartItemDtos;
 using ShoperApplication.Interfaces;
 using ShoperApplication.Interfaces.ICartRepository;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace ShoperApplication.Usecasess.CartServices;
 
@@ -42,19 +44,22 @@ public class CartService: ICartService
                 TotalAmount = item.TotalAmount,
                 CartItems = new List<ResultCartItemDto>()
             };
-            foreach (var value in item.CartItems)
+            if (item.CartItems != null)
             {
-                var productdto=await _productRepository.GetByFilterAsync(prd=>prd.Productİd==value.ProductId);
-                var cartItemdto = new ResultCartItemDto
+                foreach (var value in item.CartItems)
                 {
-                    CartId = value.CartId,
-                    CartItemId = value.CartItemId,
-                    ProductId = value.ProductId,
-                    Product = productdto,
-                    Quantity = value.Quantity,
-                    TotalPrice = value.TotalPrice,
-                };
-                cartDto.CartItems.Add(cartItemdto);
+                    var productdto=await _productRepository.GetByFilterAsync(prd=>prd.ProductId==value.ProductId);
+                    var cartItemdto = new ResultCartItemDto
+                    {
+                        CartId = value.CartId,
+                        CartItemId = value.CartItemId,
+                        ProductId = value.ProductId,
+                        Product = productdto,
+                        Quantity = value.Quantity,
+                        TotalPrice = value.TotalPrice,
+                    };
+                    cartDto.CartItems.Add(cartItemdto);
+                }
             }
             result.Add(cartDto);
         }
@@ -84,7 +89,7 @@ public class CartService: ICartService
         };
         foreach (var item in cart.CartItems)
         {
-            var productdto=await _productRepository.GetByFilterAsync(prd=>prd.Productİd==item.ProductId);
+            var productdto=await _productRepository.GetByFilterAsync(prd=>prd.ProductId==item.ProductId);
             var cartItemdto = new ResultCartItemDto
             {
                 CartId = item.CartId,
@@ -104,7 +109,7 @@ public class CartService: ICartService
         var cart = new Cart
         {
            // TotalAmount = model.TotalAmount, aşşağıda otomatik olarak alıyorum
-            CreatedDate = model.CreatedDate,
+            CreatedDate = DateTime.UtcNow,
             CustomerId = model.CustomerId,
 
         };

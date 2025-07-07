@@ -20,10 +20,182 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <style>
+
+        
+        .profile-btn:hover {
+            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%) !important;
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74,144,226,0.3) !important;
+        }
+        
+        .logout-btn:hover {
+            background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220,53,69,0.4) !important;
+        }
+        
+        .user-name-container {
+            transition: all 0.3s ease;
+        }
+        
+        .user-profile-section:hover .user-name-container {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74,144,226,0.4) !important;
+        }
+        
+        .user-name {
+            transition: color 0.3s ease;
+        }
+        
+        /* AFA Shop Logo Hover Effects */
+        .logo-container:hover,
+        .logo-container-mobile:hover,
+        .logo-container-footer:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74,144,226,0.3) !important;
+            border-color: #357ABD;
+        }
+        
+        .logo-container:hover .logo-icon,
+        .logo-container-mobile:hover .logo-icon-mobile,
+        .logo-container-footer:hover .logo-icon-footer {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(74,144,226,0.5) !important;
+        }
+        
+        .logo-icon,
+        .logo-icon-mobile,
+        .logo-icon-footer {
+            transition: all 0.3s ease;
+        }
+        
+        /* Sepet ve Favori İkonları Hover Efektleri */
+        .btn[href=""]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,107,107,0.4) !important;
+            border-color: #ff5252 !important;
+        }
+        
+        .btn[href=""]:hover svg {
+            transform: scale(1.1);
+            color: #ff5252 !important;
+        }
+        
+        .btn[href="/Cart/Index"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(74,144,226,0.4) !important;
+            border-color: #357ABD !important;
+        }
+        
+        .btn[href="/Cart/Index"]:hover svg {
+            transform: scale(1.1);
+            color: #357ABD !important;
+        }
+        
+        .btn svg {
+            transition: all 0.3s ease;
+        }
+        
+        .badge {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover .badge {
+            transform: scale(1.1);
+        }
+        
+        /* Login And Register  */
+        .nav-item.nav-link[href="/Account/Login"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74,144,226,0.25) !important;
+            border-color: #357ABD !important;
+        }
+        
+        .nav-item.nav-link[href="/Account/Login"]:hover svg {
+            transform: scale(1.1);
+        }
+        
+        .nav-item.nav-link[href="/Account/Register"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74,144,226,0.4) !important;
+            background: linear-gradient(135deg, #357ABD 0%, #2C5F9E 100%) !important;
+        }
+        
+        .nav-item.nav-link[href="/Account/Register"]:hover svg {
+            transform: scale(1.1);
+        }
+        
+        .search-container .input-group:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74,144,226,0.25) !important;
+            border-color: #4A90E2 !important;
+        }
+        
+        .search-container .input-group:focus-within {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74,144,226,0.3) !important;
+            border-color: #357ABD !important;
+        }
+        
+        .search-btn:hover {
+            background: linear-gradient(135deg, #357ABD 0%, #2C5F9E 100%) !important;
+            transform: scale(1.05);
+        }
+        
+        .search-btn:hover svg {
+            transform: scale(1.1);
+        }
+        
+        .search-container input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .search-container input::placeholder {
+            color: #6c757d;
+            opacity: 0.8;
+        }
+        
+        /* Categories Hover Effects */
+        .categories-container {
+            transition: all 0.3s ease;
+        }
+        
+        .categories-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(74,144,226,0.2) !important;
+        }
+        
+        .categories-header:hover {
+            background: linear-gradient(135deg, #357ABD 0%, #2C5F9E 100%) !important;
+        }
+        
+        .categories-header:hover i {
+            transform: rotate(180deg);
+        }
+        
+        .category-item:hover {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+            border-left: 3px solid #4A90E2 !important;
+            color: #4A90E2 !important;
+            transform: translateX(10px);
+            box-shadow: 0 4px 15px rgba(74,144,226,0.1);
+        }
+        
+        .category-item:hover svg {
+            transform: scale(1.1);
+            color: #357ABD !important;
+        }
+        
+        .category-item svg {
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
 
 <body>
-<!-- Topbar Start -->
 <div class="container-fluid">
     <div class="row bg-secondary py-2 px-xl-5">
         <div class="col-lg-6 d-none d-lg-block">
@@ -50,62 +222,151 @@
     <div class="row align-items-center py-3 px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
             <a href="" class="text-decoration-none">
-                <h1 class="m-0 display-5 font-weight-semi-bold">AFA Shop</h1>
+                <div class="logo-container" style="display: flex; align-items: center; gap: 12px; padding: 8px 16px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 25px; border: 2px solid #4A90E2; box-shadow: 0 4px 15px rgba(74,144,226,0.2); transition: all 0.3s ease;">
+                    <div class="logo-icon" style="width: 40px; height: 40px; background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(74,144,226,0.3);">
+                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m0 0h8m-8 0a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="m-0" style="font-size: 1.8rem; font-weight: 700; color: #2C3E50; letter-spacing: 1px; margin: 0;">AFA</h1>
+                        <span style="font-size: 0.9rem; color: #6c757d; font-weight: 500; letter-spacing: 0.5px;">SHOP</span>
+                    </div>
+                </div>
             </a>
         </div>
         <div class="col-lg-6 col-6 text-left">
-            <form action="">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
+            <form id="searchForm" action="/Product/Index" method="post">
+                <div class="search-container" style="position: relative; max-width: 700px; width: 100%;">
+                    <div class="input-group" style="border-radius: 30px; overflow: hidden; box-shadow: 0 4px 15px rgba(74,144,226,0.15); border: 2px solid transparent; transition: all 0.3s ease; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                        <input type="text" class="form-control border-0" placeholder="Search" id="search" name="search" style="padding: 18px 25px; font-size: 1.1rem; background: transparent; color: #2C3E50; font-weight: 500;">
+                        <div class="input-group-append">
+                            <button type="submit" class="search-btn" style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); border: none; padding: 18px 25px; color: white; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; min-width: 70px;">
+                                <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: all 0.3s ease;">
+                                    <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+                                    <path d="m20 20-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
         <div class="col-lg-3 col-6 text-right">
-            <a href="" class="btn border">
-                <i class="fas fa-heart text-primary"></i>
-                <span class="badge">0</span>
+            <a href="" class="btn border-0 me-3" style="position: relative; padding: 12px 16px; border-radius: 20px; background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%); border: 2px solid #ff6b6b; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(255,107,107,0.2);">
+                <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ff6b6b;">
+                    <path d="M10 17.5l-1.5-1.4C4.2 12.2 1 9.3 1 5.8 1 3.1 3.1 1 5.8 1c1.4 0 2.7 0.7 3.5 1.8C10.1 1.7 11.4 1 12.8 1c2.7 0 4.8 2.1 4.8 4.8 0 3.5-3.2 6.4-7.5 10.3L10 17.5z" fill="currentColor"/>
+                </svg>
+                <span class="badge" style="position: absolute; top: -5px; right: -5px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; box-shadow: 0 2px 6px rgba(255,107,107,0.4);">0</span>
             </a>
-            <a href="/Cart/Index" class="btn border">
-                <i class="fas fa-shopping-cart text-primary"></i>
-                <span class="badge">0</span>
+            <a href="/Cart/Index" class="btn border-0" style="position: relative; padding: 12px 16px; border-radius: 20px; background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); border: 2px solid #4A90E2; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(74,144,226,0.2);">
+                <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #4A90E2;">
+                    <path d="M3 3h2l.5 2M7 13h10l4-8H5.5m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m0 0h8m-8 0a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="badge" style="position: absolute; top: -5px; right: -5px; background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; box-shadow: 0 2px 6px rgba(74,144,226,0.4);">0</span>
             </a>
         </div>
     </div>
 </div>
-<!-- Topbar End -->
-<!-- Navbar Start -->
 <div class="container-fluid mb-5">
     <div class="row border-top px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
-            <a class="btn shadow-none d-flex align-items-center justify-content-between text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="background-color: rgba(135,167,235,0.41); height: 65px; margin-top: -1px; padding: 0 30px;">
-            <h6 class="m-0">Categories</h6>
-                <i class="fa fa-angle-down text-dark"></i>
-            </a>
-            <nav class="collapse navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
-                <div class="navbar-nav w-100 overflow-auto" style="height: 410px;">
-                    <a href="/Product/Index?categoryId=1" class="nav-item nav-link">Fashion</a>
-                    <a href="/Product/Index?categoryId=2" class="nav-item nav-link">Electronic</a>
-                    <a href="/Product/Index?categoryId=4" class="nav-item nav-link">Home</a>
-                    <a href="/Product/Index?categoryId=11" class="nav-item nav-link">Garden</a>
-                    <a href="/Product/Index?categoryId=8" class="nav-item nav-link">Beauty</a>
-                    <a href="/Product/Index?categoryId=10" class="nav-item nav-link">Health</a>
-                    <a href="/Product/Index?categoryId=7" class="nav-item nav-link">Sports</a>
-                    <a href="/Product/Index?categoryId=3" class="nav-item nav-link">Office Supplies</a>
-                    <a href="/Product/Index?categoryId=5" class="nav-item nav-link">Book</a>
-                    <a href="/Product/Index?categoryId=6" class="nav-item nav-link">Toys</a>
-                    <a href="/Product/Index?categoryId=9" class="nav-item nav-link">Automotive</a>
-                </div>
-            </nav>
+            <div class="categories-container" style="background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #e9ecef;">
+                <a class="categories-header d-flex align-items-center justify-content-between text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); height: 70px; padding: 0 30px; text-decoration: none; transition: all 0.3s ease;">
+                    <div class="d-flex align-items-center">
+                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;">
+                            <path d="M3 3h18v2H3V3zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="#fff"/>
+                        </svg>
+                        <h6 class="m-0" style="font-weight: 600; font-size: 1.1rem;">Categories</h6>
+                    </div>
+                    <i class="fa fa-angle-down" style="font-size: 1.2rem; transition: transform 0.3s ease;"></i>
+                </a>
+                <nav class="collapse navbar navbar-vertical navbar-light align-items-start p-0" id="navbar-vertical" style="background: white;">
+                    <div class="navbar-nav w-100 overflow-auto" style="height: 510px; padding: 17px 0;">
+                        <a href="/Product/Index?categoryId=1" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                            </svg>
+                            Fashion
+                        </a>
+                        <a href="/Product/Index?categoryId=2" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                            </svg>
+                            Electronic
+                        </a>
+                        <a href="/Product/Index?categoryId=4" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+                            </svg>
+                            Home
+                        </a>
+                        <a href="/Product/Index?categoryId=11" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.06.87 1.93 1.93 1.93 1.06 0 1.93-.87 1.93-1.93 0-1.06-.87-1.93-1.93-1.93-1.06 0-1.93.87-1.93 1.93zM12 5.5c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z" fill="currentColor"/>
+                            </svg>
+                            Garden
+                        </a>
+                        <a href="/Product/Index?categoryId=8" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                            </svg>
+                            Beauty
+                        </a>
+                        <a href="/Product/Index?categoryId=10" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                            </svg>
+                            Health
+                        </a>
+                        <a href="/Product/Index?categoryId=7" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                            </svg>
+                            Sports
+                        </a>
+                        <a href="/Product/Index?categoryId=3" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z" fill="currentColor"/>
+                            </svg>
+                            Office Supplies
+                        </a>
+                        <a href="/Product/Index?categoryId=5" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z" fill="currentColor"/>
+                            </svg>
+                            Book
+                        </a>
+                        <a href="/Product/Index?categoryId=6" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                            </svg>
+                            Toys
+                        </a>
+                        <a href="/Product/Index?categoryId=9" class="category-item nav-item nav-link d-flex align-items-center" style="padding: 12px 25px; color: #2C3E50; text-decoration: none; transition: all 0.3s ease; border-left: 3px solid transparent; font-weight: 500;">
+                            <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px; color: #4A90E2;">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/>
+                            </svg>
+                            Automotive
+                        </a>
+                    </div>
+                </nav>
+            </div>
         </div>
         <div class="col-lg-9">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0">
                 <a href="" class="text-decoration-none d-block d-lg-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">A</span>AFA</h1>
+                    <div class="logo-container-mobile" style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 20px; border: 2px solid #4A90E2; box-shadow: 0 3px 10px rgba(74,144,226,0.2); transition: all 0.3s ease;">
+                        <div class="logo-icon-mobile" style="width: 32px; height: 32px; background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(74,144,226,0.3);">
+                            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.25 2.25h1.5l.3 1.5M5.25 9.75h7.5l3-6H4.05m0 0L5.25 9.75m0 0l-1.875 3.75M5.25 9.75l1.875 3.75m0 0h6m-6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text-mobile">
+                            <h1 class="m-0" style="font-size: 1.4rem; font-weight: 700; color: #2C3E50; letter-spacing: 0.5px; margin: 0;">AFA</h1>
+                            <span style="font-size: 0.7rem; color: #6c757d; font-weight: 500; letter-spacing: 0.3px;">SHOP</span>
+                        </div>
+                    </div>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -114,59 +375,54 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/Home/Index" class="nav-item nav-link active">Home Page</a>
                         <a href="/product/Index" class="nav-item nav-link">Products</a>
-                        <!-- <a href="/product/Detail" class="nav-item nav-link">Shop Detail</a> -->
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="/Cart/Index" class="dropdown-item">Shopping Cart</a>
-                                <a href="/Order/Checkout" class="dropdown-item">Checkout</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="/Cart/Index" class="nav-item nav-link">Shopping Cart</a>
+                        <a href="/Home/Contact" class="nav-item nav-link">Contact</a>
+                        <a href="/Help/Index" class="nav-item nav-link">Help</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
                         @if (User.Identity.Name == null)
                         {
-                            <a href="/Account/Login" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
-                                <span style="display: flex; align-items: center;">
-                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="9" cy="9" r="9" fill="#D19C97"/><path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/></svg>
-                                </span>
-                                Login
+                            <a href="/Account/Login" class="nav-item nav-link" style="display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 15px; background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); border: 1px solid #4A90E2; transition: all 0.3s ease; text-decoration: none; color: #2C3E50; font-weight: 500; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(74,144,226,0.15);">
+                                <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: all 0.3s ease;">
+                                    <circle cx="10" cy="10" r="10" fill="#4A90E2"/>
+                                    <path d="M10 11.5c1.1 0 2-0.9 2-2s-0.9-2-2-2-2 0.9-2 2 0.9 2 2 2Zm0 0.5c-1.3 0-4 0.7-4 2v1.5h8V14c0-1.3-2.7-2-4-2Z" fill="#fff"/>
+                                </svg>
+                                <span>Login</span>
                             </a>
-                            <a href="/Account/Register" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
-                                <span style="display: flex; align-items: center;">
-                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="9" cy="9" r="9" fill="#D19C97"/><path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/></svg>
-                                </span>
-                                Register
+                            <a href="/Account/Register" class="nav-item nav-link" style="display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 15px; background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); border: none; transition: all 0.3s ease; text-decoration: none; color: #fff; font-weight: 500; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(74,144,226,0.3);">
+                                <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: all 0.3s ease;">
+                                    <circle cx="10" cy="10" r="10" fill="#fff"/>
+                                    <path d="M10 11.5c1.1 0 2-0.9 2-2s-0.9-2-2-2-2 0.9-2 2 0.9 2 2 2Zm0 0.5c-1.3 0-4 0.7-4 2v1.5h8V14c0-1.3-2.7-2-4-2Z" fill="#4A90E2"/>
+                                </svg>
+                                <span>Register</span>
                             </a>
                         }
                         else
                         {
-                            <span class="nav-item nav-link" style="color: #D19C97; font-weight: 500; display: flex; align-items: center; gap: 6px;">
-                                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
-                                    <circle cx="9" cy="9" r="9" fill="#D19C97"/>
-                                    <path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/>
-                                </svg>
-                                @User.Identity.Name
-                            </span>
-                            <a href="/Account/Profile" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
-                                <span style="display: flex; align-items: center;">
-                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
-                                        <circle cx="9" cy="9" r="9" fill="#D19C97"/>
-                                        <path d="M9 9.8c1.4 0 2.5-1.1 2.5-2.5S10.4 4.8 9 4.8 6.5 5.9 6.5 7.3 7.6 9.8 9 9.8Zm0 0.8c-1.65 0-5 0.825-5 2.5V15h10v-1.9c0-1.675-3.35-2.5-5-2.5Z" fill="#fff"/>
+                            <div class="user-profile-section d-flex align-items-center">
+                                <div class="user-name-container me-4" style="display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 20px; background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); border: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(74,144,226,0.3);">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 8.5c1.1 0 2-0.9 2-2s-0.9-2-2-2-2 0.9-2 2 0.9 2 2 2Zm0 0.5c-1.3 0-4 0.7-4 2v1.5h8V11c0-1.3-2.7-2-4-2Z" fill="#fff"/>
                                     </svg>
-                                </span>
-                                Profile
-                            </a>
-                            <a href="/Account/Logout" class="nav-item nav-link" style="display: flex; align-items: center; gap: 6px;">
-                                <span style="display: flex; align-items: center;">
-                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
-                                        <circle cx="9" cy="9" r="9" fill="#D19C97"/>
-                                        <path d="M6.5 9h5m-2.5-2.5L11 9l-2 2.5M12 15H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <span class="user-name" style="color: #fff; font-weight: 600; font-size: 0.95rem; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                                        @(User.Identity?.Name ?? "User")
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="user-actions d-flex align-items-center">
+                                <a href="/Profile/Index" class="nav-item nav-link profile-btn me-4" style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid #4A90E2; transition: all 0.3s; text-decoration: none; color: #2C3E50; font-weight: 500; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(74,144,226,0.1);">
+                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 9.5c1.1 0 2-0.9 2-2s-0.9-2-2-2-2 0.9-2 2 0.9 2 2 2Zm0 0.5c-1.3 0-4 0.7-4 2v1.5h8V12c0-1.3-2.7-2-4-2Z" fill="#4A90E2"/>
                                     </svg>
-                                </span>
-                                Exit
-                            </a>
+                                    Profile
+                                </a>
+                                <a href="/Account/Logout" class="nav-item nav-link logout-btn" style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 20px; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); border: none; transition: all 0.3s; text-decoration: none; color: #fff; font-weight: 500; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(220,53,69,0.3);">
+                                    <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 10h4m-2-2l2 2-2 2M11 16H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Exit
+                                </a>
+                            </div>
                         }
                     </div>
                 </div>
@@ -175,71 +431,94 @@
         </div>
     </div>
 </div>
-<!-- Navbar End -->
 <div class="container-fluid mb-5">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <a href="" class="text-decoration-none">
-                    <h1 class="mb-4 display-5 font-weight-semi-bold">AFA Shop</h1>
-                </a>
-                <p>Always the best with 100% original product guarantee and affordable prices.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Konyaaltı, Antalya, Turkey</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@33afashop.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+090 242 33 33 </p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="/Home/Index"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="/Cart/Index"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-dark mb-2" href="/Order/Checkout"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="row justify-content-center pt-5">
+                <div class="col-lg-4 col-md-6 mb-5 text-center text-lg-left">
+                                    <a href="" class="text-decoration-none">
+                    <div class="logo-container-footer" style="display: flex; align-items: center; gap: 15px; padding: 12px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 30px; border: 2px solid #4A90E2; box-shadow: 0 6px 20px rgba(74,144,226,0.25); transition: all 0.3s ease; margin-bottom: 1.5rem;">
+                        <div class="logo-icon-footer" style="width: 50px; height: 50px; background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(74,144,226,0.4);">
+                            <svg width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 3.5h2.5l.5 2.5M8.75 16.25h12.5l5-10H6.75m0 0L8.75 16.25m0 0l-3.125 6.25M8.75 16.25l3.125 6.25m0 0h10m-10 0a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm10 0a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text-footer">
+                            <h1 class="m-0" style="font-size: 2.2rem; font-weight: 700; color: #2C3E50; letter-spacing: 1.5px; margin: 0;">AFA</h1>
+                            <span style="font-size: 1rem; color: #6c757d; font-weight: 500; letter-spacing: 0.8px;">SHOP</span>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
-                        <form action="">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                                    required="required" />
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
-                            </div>
-                        </form>
+                </a>
+                    <p class="mb-4" style="color: #6c757d; line-height: 1.6;">Always the best with 100% original product guarantee and affordable prices.</p>
+                    <div class="contact-info">
+                        <p class="mb-3 d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <i class="fa fa-map-marker-alt text-primary mr-3" style="width: 20px;"></i>
+                            <span>Konyaaltı, Antalya, Turkey</span>
+                        </p>
+                        <p class="mb-3 d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <i class="fa fa-envelope text-primary mr-3" style="width: 20px;"></i>
+                            <span>info@33afashop.com</span>
+                        </p>
+                        <p class="mb-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <i class="fa fa-phone-alt text-primary mr-3" style="width: 20px;"></i>
+                            <span>+090 242 33 33</span>
+                        </p>
                     </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 text-center">
+                    <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                    <div class="d-flex flex-column align-items-center">
+                        <a class="text-dark mb-3 d-flex align-items-center" href="/Home/Index" style="text-decoration: none; transition: color 0.3s;">
+                            <i class="fa fa-angle-right mr-2 text-primary"></i>Home
+                        </a>
+                        <a class="text-dark mb-3 d-flex align-items-center" href="/Cart/Index" style="text-decoration: none; transition: color 0.3s;">
+                            <i class="fa fa-angle-right mr-2 text-primary"></i>Shopping Cart
+                        </a>
+                        <a class="text-dark mb-3 d-flex align-items-center" href="/Product/Index" style="text-decoration: none; transition: color 0.3s;">
+                            <i class="fa fa-angle-right mr-2 text-primary"></i>Products
+                        </a>
+                        <a class="text-dark d-flex align-items-center" href="/Home/Contact" style="text-decoration: none; transition: color 0.3s;">
+                            <i class="fa fa-angle-right mr-2 text-primary"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 text-center">
+                    <h5 class="font-weight-bold text-dark mb-4">Subscribe To Our Newsletter</h5>
+                    <form action="/Subscriber/Create" method="post" class="newsletter-form">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control border-0 py-3 px-3" placeholder="Your Name" required="required" name="name" style="border-radius: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" class="form-control border-0 py-3 px-3" placeholder="Your Email" name="email" required="required" style="border-radius: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" />
+                        </div>
+                        <div>
+                            <button class="btn btn-primary btn-block border-0 py-3" type="submit" style="border-radius: 25px; background: linear-gradient(135deg, #D19C97 0%, #ba6a62 100%); border: none; box-shadow: 0 4px 15px rgba(209,156,151,0.3); transition: all 0.3s;">
+                                Subscribe Now
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="row border-top border-light mx-xl-5 py-4">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#">33AFA Shop</a>. All rights reserved. Don't believe me if I say so, you can access all the codes from github. Designed
-                    by
-                    <a class="text-dark font-weight-semi-bold" href="https://github.com/BilalFurkaan">Bilal Furkan Karaca</a>
+        <div class="row border-top border-light py-4 mt-4">
+            <div class="col-12 text-center">
+                <p class="mb-0 text-dark" style="font-size: 0.9rem;">
+                    &copy; <a class="text-primary font-weight-semi-bold" href="#">33AFA Shop</a>. All rights reserved. 
+                    Don't believe me if I say so, you can access all the codes from github. Designed by
+                    <a class="text-primary font-weight-semi-bold" href="https://github.com/BilalFurkaan">Bilal Furkan Karaca</a>
                 </p>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
             </div>
         </div>
     </div>
-    <!-- Footer End -->
 
 
-    <!-- Back to Top -->
+
+
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
@@ -249,12 +528,20 @@
     <script src="../lib/easing/easing.min.js"></script>
     <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <!-- Bootstrap 5 JavaScript (for Profile page tabs and modals) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Contact Javascript File -->
     <script src="../mail/jqBootstrapValidation.min.js"></script>
     <script src="../mail/contact.js"></script>
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('searchIcon').addEventListener('click', function () {
+            document.getElementById('searchForm').submit();
+        });
+    </script>
 </body>
 
 </html>

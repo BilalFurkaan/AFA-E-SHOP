@@ -1,5 +1,5 @@
 @using ShoperApplication.Dtos.CartDtos
-@model ShoperApplication.Dtos.CartDtos.GetByIdCartDto
+@model ShoperApplication.Dtos.CartDtos.ResultCartDto
 <div class="container-fluid pt-5">
     <div class="row px-xl-5">
         <div class="col-lg-8 table-responsive mb-5">
@@ -63,7 +63,6 @@
                         <h5 class="font-weight-bold">Total</h5>
                         <h5 class="font-weight-bold">$@Model.TotalAmount</h5>
                     </div>
-                    <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
                     <a href="/Order/Checkout?cartId=@Model.CartId" class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</a>
                 </div>
             </div>
@@ -88,11 +87,10 @@
         });
     }
     function updateQuantity(cartId, productId, cartItemId, quantity) {
-        // Mevcut miktarı al
         var currentQuantity = parseInt($('#quantity_' + productId).val());
         var newQuantity = currentQuantity + quantity;
         
-        // Miktar 0'dan küçük olamaz
+
         if (newQuantity <= 0) {
             newQuantity = 0;
         }

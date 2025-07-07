@@ -41,6 +41,8 @@ namespace Shoper.Persistence.Data.Migrations
 
                     b.HasKey("CartId");
 
+                    b.HasIndex("CustomerId");
+
                     b.ToTable("Carts");
                 });
 
@@ -92,20 +94,17 @@ namespace Shoper.Persistence.Data.Migrations
 
             modelBuilder.Entity("Shoper.Domain.Entities.City", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CityId")
-                        .HasColumnType("integer");
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CityId"));
 
                     b.Property<string>("CityName")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("CityId");
 
                     b.ToTable("Citys");
                 });
@@ -126,6 +125,10 @@ namespace Shoper.Persistence.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("IdentityId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
@@ -139,6 +142,41 @@ namespace Shoper.Persistence.Data.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("Shoper.Domain.Entities.Help", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Helps");
+                });
+
             modelBuilder.Entity("Shoper.Domain.Entities.Order", b =>
                 {
                     b.Property<int>("OrderId")
@@ -147,24 +185,8 @@ namespace Shoper.Persistence.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OrderId"));
 
-                    b.Property<string>("CustomerEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<int>("CustomerId")
                         .HasColumnType("integer");
-
-                    b.Property<string>("CustomerName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CustomerPhone")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CustomerSurname")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("timestamp with time zone");
@@ -187,6 +209,12 @@ namespace Shoper.Persistence.Data.Migrations
                         .HasColumnType("numeric");
 
                     b.HasKey("OrderId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ShippingCityId");
+
+                    b.HasIndex("ShippingTownId");
 
                     b.ToTable("Orders");
                 });
@@ -215,21 +243,23 @@ namespace Shoper.Persistence.Data.Migrations
 
                     b.HasIndex("OrderId");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Shoper.Domain.Entities.Product", b =>
                 {
-                    b.Property<int>("Productİd")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Productİd"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ProductId"));
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Desription")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -247,14 +277,14 @@ namespace Shoper.Persistence.Data.Migrations
                     b.Property<int>("Stock")
                         .HasColumnType("integer");
 
-                    b.HasKey("Productİd");
+                    b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Shoper.Domain.Entities.Town", b =>
+            modelBuilder.Entity("Shoper.Domain.Entities.Subscriber", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -262,19 +292,53 @@ namespace Shoper.Persistence.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CityId")
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("SubscriberDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscribers");
+                });
+
+            modelBuilder.Entity("Shoper.Domain.Entities.Town", b =>
+                {
+                    b.Property<int>("TownId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    b.Property<int>("TownId")
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("TownId"));
+
+                    b.Property<int>("CityId")
                         .HasColumnType("integer");
 
                     b.Property<string>("TownName")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("TownId");
+
+                    b.HasIndex("CityId");
 
                     b.ToTable("Towns");
+                });
+
+            modelBuilder.Entity("Shoper.Domain.Entities.Cart", b =>
+                {
+                    b.HasOne("Shoper.Domain.Entities.Customer", "Customer")
+                        .WithMany("Carts")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("Shoper.Domain.Entities.CartItem", b =>
@@ -286,32 +350,80 @@ namespace Shoper.Persistence.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Shoper.Domain.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("CartItems")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Shoper.Domain.Entities.Order", b =>
+                {
+                    b.HasOne("Shoper.Domain.Entities.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shoper.Domain.Entities.City", "ShippingCity")
+                        .WithMany("Orders")
+                        .HasForeignKey("ShippingCityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Shoper.Domain.Entities.Town", "ShippingTown")
+                        .WithMany("Orders")
+                        .HasForeignKey("ShippingTownId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("ShippingCity");
+
+                    b.Navigation("ShippingTown");
+                });
+
             modelBuilder.Entity("Shoper.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("Shoper.Domain.Entities.Order", null)
+                    b.HasOne("Shoper.Domain.Entities.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Shoper.Domain.Entities.Product", "Product")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Shoper.Domain.Entities.Product", b =>
                 {
                     b.HasOne("Shoper.Domain.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Shoper.Domain.Entities.Town", b =>
+                {
+                    b.HasOne("Shoper.Domain.Entities.City", "City")
+                        .WithMany("Towns")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
                 });
 
             modelBuilder.Entity("Shoper.Domain.Entities.Cart", b =>
@@ -319,9 +431,40 @@ namespace Shoper.Persistence.Data.Migrations
                     b.Navigation("CartItems");
                 });
 
+            modelBuilder.Entity("Shoper.Domain.Entities.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Shoper.Domain.Entities.City", b =>
+                {
+                    b.Navigation("Orders");
+
+                    b.Navigation("Towns");
+                });
+
+            modelBuilder.Entity("Shoper.Domain.Entities.Customer", b =>
+                {
+                    b.Navigation("Carts");
+
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("Shoper.Domain.Entities.Order", b =>
                 {
                     b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("Shoper.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("CartItems");
+
+                    b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("Shoper.Domain.Entities.Town", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

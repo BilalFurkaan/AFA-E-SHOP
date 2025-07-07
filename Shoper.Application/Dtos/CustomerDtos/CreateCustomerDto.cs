@@ -7,5 +7,5 @@ public class CreateCustomerDto//customer oluştururken ıd göndermiyorum otomat
     public string LastName { get; set; }
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
-   
+    public string IdentityId { get; set; }
 }

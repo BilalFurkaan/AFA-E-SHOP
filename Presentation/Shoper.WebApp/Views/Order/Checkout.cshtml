@@ -1,4 +1,4 @@
-@model ShoperApplication.Dtos.CartDtos.GetByIdCartDto
+@model ShoperApplication.Dtos.OrderDtos.CheckoutViewModel
 <div class="container-fluid pt-5">
     <div class="row px-xl-5">
         <div class="col-lg-8">
@@ -7,19 +7,19 @@
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label>First Name</label>
-                        <input class="form-control" type="text" placeholder="Name" name="customerName" id="customerName" required >
+                        <input class="form-control" type="text" placeholder="Name" name="customerName" id="customerName" required value="@Model.FirstName">
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Last Name</label>
-                        <input class="form-control" type="text" placeholder="Surname" name="customerSurname" id="customerSurname" required >
+                        <input class="form-control" type="text" placeholder="Surname" name="customerSurname" id="customerSurname" required value="@Model.LastName">
                     </div>
                     <div class="col-md-6 form-group">
                         <label>E-mail</label>
-                        <input class="form-control" type="text" placeholder="example@email.com" name="customerEmail" id="customerEmail" required>
+                        <input class="form-control" type="text" placeholder="example@email.com" name="customerEmail" id="customerEmail" required value="@Model.Email">
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Phone No</label>
-                        <input class="form-control" type="text" placeholder="+90 555 555 55 55" name="customerPhone" id="customerPhone" required>
+                        <input class="form-control" type="text" placeholder="+90 555 555 55 55" name="customerPhone" id="customerPhone" required value="@Model.PhoneNumber">
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Cities</label>
@@ -47,9 +47,9 @@
                 </div>
                 <div class="card-body">
                     <h5 class="font-weight-medium mb-3">Products</h5>
-                    @if (Model?.CartItems != null)
+                    @if (Model?.Cart?.CartItems != null)
                     {
-                        @foreach (var item in Model.CartItems)
+                        foreach (var item in Model.Cart.CartItems)
                         {
                             <div class="d-flex justify-content-between">
                                 <p>@item.Product.ProductName | @item.Product.Price X @item.Quantity</p>
@@ -60,13 +60,13 @@
                     <hr class="mt-0">
                     <div class="d-flex justify-content-between mb-3 pt-1">
                         <h6 class="font-weight-medium">Subtotal</h6>
-                        <h6 class="font-weight-medium">$@(Model?.TotalAmount ?? 0)</h6>
+                        <h6 class="font-weight-medium">$@(Model?.Cart?.TotalAmount ?? 0)</h6>
                     </div>
                 </div>
                 <div class="card-footer border-secondary bg-transparent">
                     <div class="d-flex justify-content-between mt-2">
                         <h5 class="font-weight-bold">Total</h5>
-                        <h5 class="font-weight-bold">$@(Model?.TotalAmount ?? 0)</h5>
+                        <h5 class="font-weight-bold">$@(Model?.Cart?.TotalAmount ?? 0)</h5>
                     </div>
                     <button id="completeOrder" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
                 </div>
@@ -131,36 +131,36 @@
     $('#completeOrder').click(function (e) {
         e.preventDefault();
         var orderData = {
-            customerName: $('#customerName').val(),
-            customerSurname: $('#customerSurname').val(),
-            customerEmail: $('#customerEmail').val(),
-            customerPhone: $('#customerPhone').val(),
             shippingCityId: $('#city').val(),
             shippingTownId: $('#town').val(),
             shippingAdress: $('#shippingAdress').val(),
-            totalAmount: '@Model.TotalAmount'  // Assuming this is coming from your model
+            totalAmount: '@(Model?.Cart?.TotalAmount ?? 0)'
         };
-        var cartId = @Model.CartId;
+        var cartId = @(Model?.CartId ?? 0);
         
-        if (!orderData.customerName || !orderData.customerSurname || !orderData.customerEmail ||
-            !orderData.customerPhone || !orderData.shippingCityId || orderData.shippingCityId === "0" ||
-            !orderData.shippingTownId || !orderData.shippingAdress) {
-            toastr.error('Please Entry All Rows.');
+        if (!orderData.shippingCityId || orderData.shippingCityId === "0" ||
+            !orderData.shippingTownId || orderData.shippingTownId === "0" ||
+            !orderData.shippingAdress) {
+            toastr.error('Please fill all required fields.');
             return;
         }
         $.ajax({
             type: 'POST',
-            url: '/Order/CreateOrder',  // Replace with your controller's name
-            data: {dto:orderData,cartId:cartId
-            },
+            url: '/Order/CreateOrder',  
+            data: {dto:orderData,cartId:cartId},
             dataType: 'json',
             success: function (response) {
-                console.log(response);
-                alert('Successfully Placed Order');
-                window.location.href = '@Url.Action("Index", "Home")';
+                if (response.success) {
+                    toastr.success('Order placed successfully!');
+                    setTimeout(function() {
+                        window.location.href = '@Url.Action("Index", "Home")';
+                    }, 1500);
+                } else {
+                    toastr.error('Error: ' + (response.error || 'Unknown error occurred'));
+                }
             },
-            error: function (response) {
-                alert('Error placing order.');
+            error: function (xhr, status, error) {
+                toastr.error('Error placing order: ' + error);
             }
         });
     });

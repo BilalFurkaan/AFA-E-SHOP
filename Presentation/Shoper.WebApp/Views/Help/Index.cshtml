@@ -1,0 +1,302 @@
+@{
+    ViewData["Title"] = "Yardım & İletişim";
+}
+
+<style>
+    .help-container {
+        background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+        min-height: 100vh;
+        padding: 60px 0;
+    }
+    
+    .help-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .help-header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #2C3E50;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .help-header p {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    
+    .help-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .contact-info {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(74,144,226,0.15);
+        border: 1px solid rgba(74,144,226,0.1);
+        height: fit-content;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #2C3E50;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+        padding: 15px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(74,144,226,0.2);
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(74,144,226,0.3);
+    }
+    
+    .contact-text h5 {
+        font-weight: 600;
+        color: #2C3E50;
+        margin-bottom: 5px;
+    }
+    
+    .contact-text p {
+        color: #6c757d;
+        margin: 0;
+    }
+    
+    .help-form {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(74,144,226,0.15);
+        border: 1px solid rgba(74,144,226,0.1);
+    }
+    
+    .help-form h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #2C3E50;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+    }
+    
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        color: #2C3E50;
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid #e9ecef;
+        border-radius: 15px;
+        font-size: 1rem;
+        background: #f8f9fa;
+        transition: all 0.3s ease;
+        color: #2C3E50;
+    }
+    
+    .form-control:focus {
+        outline: none;
+        border-color: #4A90E2;
+        box-shadow: 0 0 0 3px rgba(74,144,226,0.1);
+        background: #fff;
+    }
+    
+    .form-control::placeholder {
+        color: #6c757d;
+        opacity: 0.7;
+    }
+    
+    textarea.form-control {
+        resize: vertical;
+        min-height: 120px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 15px 30px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border: none;
+        border-radius: 15px;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(74,144,226,0.3);
+    }
+    
+    .submit-btn:hover {
+        background: linear-gradient(135deg, #357ABD 0%, #2C5F9E 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(74,144,226,0.4);
+    }
+    
+    .alert {
+        border-radius: 15px;
+        border: none;
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        font-weight: 500;
+    }
+    
+    .alert-success {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+    }
+    
+    .alert-danger {
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(220,53,69,0.3);
+    }
+</style>
+
+<div class="help-container">
+    <div class="help-header">
+        <h1>Help & Contact</h1>
+        <p>Do you have any questions? Contact us, we will be happy to help you.</p>
+    </div>
+    
+    <div class="help-content">
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="contact-text">
+                    <h5>Address</h5>
+                    <p>Konyaaltı, Antalya, Turkey</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="contact-text">
+                    <h5>E-Mail</h5>
+                    <p>info@33afashop.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="contact-text">
+                    <h5>Phone</h5>
+                    <p>+090 242 33 33</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="contact-text">
+                    <h5>Working Hours</h5>
+                    <p>Monday - Saturday: 09:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="help-form">
+            <h3>Send Ticket</h3>
+            
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["Success"]
+                </div>
+            }
+            
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["Error"]
+                </div>
+            }
+            
+            <form method="post" action="/Help/Create">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" class="form-control" id="name" name="Name" placeholder="Entry name and last name " required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" class="form-control" id="email" name="Email" placeholder="Entry email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" class="form-control" id="subject" name="Subject" placeholder="Entry Ticket Subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea class="form-control" id="message" name="Message" placeholder="Details your ticket" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/>
+                    </svg>
+                    Send Ticket
+                </button>
+            </form>
+        </div>
+    </div>
+</div> 

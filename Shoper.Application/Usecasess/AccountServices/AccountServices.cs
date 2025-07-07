@@ -24,9 +24,10 @@ public class AccountServices: IAccountServices
         return result;
     }
 
-    public async Task<string> ChangePassword()
+    public async Task<string> ChangePassword(ChangePasswordDto dto, string userId)
     {
-        throw new NotImplementedException();
+        var result = await _userIdentityRepository.ChangePasswordAsync(dto, userId);
+        return result;
     }
 
     public async Task LogoutAsync()

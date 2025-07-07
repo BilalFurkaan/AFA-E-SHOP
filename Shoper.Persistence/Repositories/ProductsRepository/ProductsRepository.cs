@@ -27,7 +27,7 @@ public class ProductsRepository:IProductsRepository
 
     public async Task<List<Product>> GetProductBySearch(string productName)
     {
-        return await _context.Products.Where(x => x.ProductName.Contains(productName) || x.Desription.Contains(productName)).ToListAsync();
+        return await _context.Products.Where(x => x.ProductName.Contains(productName) || x.Description.Contains(productName)).ToListAsync();
     }
 }
 

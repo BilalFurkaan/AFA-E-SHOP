@@ -20,6 +20,10 @@ using ShoperApplication.Usecasess.CartServices;
 using ShoperApplication.Usecasess.CategoryServices;
 using ShoperApplication.Usecasess.OrderServices;
 using ShoperApplication.Usecasess.ProductServices;
+using ShoperApplication.Usecasess.SubscriberServices;
+using ShoperApplication.Usecasess.HelpServices;
+using ShoperApplication.Usecasess.CustomerServices;
+using ShoperApplication.Usecasess.ProfileServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,16 +41,18 @@ builder.Services.AddScoped<ICartItemService, CartItemService>();
 builder.Services.AddScoped<ICartItemRepository, CartItemsRepository>();
 builder.Services.AddScoped<IOrderServices, OrderServices>();
 builder.Services.AddScoped<IAccountServices, AccountServices>();
-builder.Services.AddDbContext<AppIdentityDbContext>(options =>
-{
-    var configuration = builder.Configuration;
-    var connectionString = configuration.GetConnectionString("DefaultConnection");
-    options.UseNpgsql(connectionString);
-});
+builder.Services.AddScoped<ISubscriberService, SubscriberService>();
+builder.Services.AddScoped<IHelpService, HelpService>();
+builder.Services.AddScoped<ICustomerServices, CustomerServices>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
+
+// AppIdentityDbContext - OnConfiguring metodunda connection string kullanıyor
+builder.Services.AddDbContext<AppIdentityDbContext>();
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/Account/Login"; // Giriþ yapmadan eriþilmeye çalýþýldýðýnda yönlendirilecek sayfa
+        options.LoginPath = "/Account/Login";
     });
 builder.Services.AddIdentity<AppIdentityUser, AppIdentityRole>()
     .AddEntityFrameworkStores<AppIdentityDbContext>()
@@ -55,20 +61,20 @@ builder.Services.AddIdentity<AppIdentityUser, AppIdentityRole>()
 builder.Services.Configure<IdentityOptions>(options =>
 {
 
-    //options.Password.RequireDigit = true; //Þifre Sayýsal karakteri desteklesin mi?
-    options.Password.RequiredLength = 6;  //Þifre minumum karakter sayýsý
-    options.Password.RequireLowercase = true; //Þifre küçük harf olabilir
-    options.Password.RequireLowercase = true; //Þifre büyük harf olabilir
-    options.Password.RequireNonAlphanumeric = false; //Sembol bulunabilir
+    //options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 6;  
+    options.Password.RequireLowercase = true; 
+    options.Password.RequireLowercase = true; 
+    options.Password.RequireNonAlphanumeric = false; 
 
-    options.Lockout.MaxFailedAccessAttempts = 5; //Kullanýcý kaç baþarýsýz giriþten sonra sisteme giriþ yapamasýn
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); //Baþarýsýz giriþ iþlemlerinden sonra ne kadar süre sonra sisteme giriþ hakký tanýnsýn
-    options.Lockout.AllowedForNewUsers = true; //Yeni üyeler için kilit sistemi geçerli olsun mu
+    options.Lockout.MaxFailedAccessAttempts = 5; 
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.AllowedForNewUsers = true; 
 
-    options.User.RequireUniqueEmail = true; //Kullanýcý benzersiz e-mail adresine sahip olsun
+    options.User.RequireUniqueEmail = true; 
 
-    options.SignIn.RequireConfirmedEmail = false; //Kayýt iþlemleri için email onaylamasý zorunlu olsun mu?
-    options.SignIn.RequireConfirmedPhoneNumber = false; //Telefon onayý olsun mu?
+    options.SignIn.RequireConfirmedEmail = false; 
+    options.SignIn.RequireConfirmedPhoneNumber = false;
 });
 
 

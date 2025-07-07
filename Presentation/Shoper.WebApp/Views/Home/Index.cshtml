@@ -1,151 +1,415 @@
 ﻿@using Shoper.Domain.Entities
+@using Shoper.WebApp.Helpers
 @model List<ShoperApplication.Dtos.ProductDtos.ResultProductDto>
+
 @section Carousel {
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="height: 410px;">
-                <img class="img-fluid" src="/img/carousel-1.jpg" alt="Image">
+            <div class="carousel-item active" style="height: 500px;">
+                <img class="img-fluid w-100" src="/img/carousel-1.jpg" alt="Image" style="object-fit: cover; height: 100%;">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
-                        <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <div class="p-4" style="max-width: 800px; background: rgba(0,0,0,0.4); border-radius: 20px; backdrop-filter: blur(10px);">
+                        <h4 class="text-light text-uppercase font-weight-medium mb-3" style="font-size: 1.2rem; letter-spacing: 2px;">10% Off Your First Order</h4>
+                        <h3 class="display-4 text-white font-weight-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Fashionable Dress</h3>
+                        <a href="/Product/Index" class="btn btn-primary py-3 px-4" style="border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(74,144,226,0.4);">Shop Now</a>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item" style="height: 410px;">
-                <img class="img-fluid" src="/img/carousel-2.jpg" alt="Image">
+            <div class="carousel-item" style="height: 500px;">
+                <img class="img-fluid w-100" src="/img/carousel-2.jpg" alt="Image" style="object-fit: cover; height: 100%;">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                        <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <div class="p-4" style="max-width: 800px; background: rgba(0,0,0,0.4); border-radius: 20px; backdrop-filter: blur(10px);">
+                        <h4 class="text-light text-uppercase font-weight-medium mb-3" style="font-size: 1.2rem; letter-spacing: 2px;">Quality Products, Affordable Prices</h4>
+                        <h3 class="display-4 text-white font-weight-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Reasonable Prices</h3>
+                        <a href="/Product/Index" class="btn btn-primary py-3 px-4" style="border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(74,144,226,0.4);">Shop Now</a>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item" style="height: 410px;">
-                <img class="img-fluid" src="/img/Garden.jpg" alt="Image">
+            <div class="carousel-item" style="height: 500px;">
+                <img class="img-fluid w-100" src="/img/Garden.jpg" alt="Image" style="object-fit: cover; height: 100%;">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h4 class="text-light text-uppercase font-weight-medium mb-3">Installment Options At The Cash Price</h4>
-                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">Discount On Garden Products</h3>
-                        <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <div class="p-4" style="max-width: 800px; background: rgba(0,0,0,0.4); border-radius: 20px; backdrop-filter: blur(10px);">
+                        <h4 class="text-light text-uppercase font-weight-medium mb-3" style="font-size: 1.2rem; letter-spacing: 2px;">Installment Options At The Cash Price</h4>
+                        <h3 class="display-4 text-white font-weight-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Discount On Garden Products</h3>
+                        <a href="/Product/Index" class="btn btn-primary py-3 px-4" style="border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(74,144,226,0.4);">Shop Now</a>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item" style="height: 410px;">
-                <img class="img-fluid" src="/img/headphone.jpg" alt="Image">
+            <div class="carousel-item" style="height: 500px;">
+                <img class="img-fluid w-100" src="/img/headphone.jpg" alt="Image" style="object-fit: cover; height: 100%;">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h4 class="text-light text-uppercase font-weight-medium mb-3">Famous Brand At An Affordable Price</h4>
-                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">25% Discount On Headphones At Checkout</h3>
-                        <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                    <div class="p-4" style="max-width: 800px; background: rgba(0,0,0,0.4); border-radius: 20px; backdrop-filter: blur(10px);">
+                        <h4 class="text-light text-uppercase font-weight-medium mb-3" style="font-size: 1.2rem; letter-spacing: 2px;">Famous Brand At An Affordable Price</h4>
+                        <h3 class="display-4 text-white font-weight-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">25% Discount On Headphones At Checkout</h3>
+                        <a href="/Product/Index" class="btn btn-primary py-3 px-4" style="border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(74,144,226,0.4);">Shop Now</a>
                     </div>
                 </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-            <div class="btn btn-dark" style="width: 45px; height: 45px;">
+            <div class="btn btn-primary" style="width: 50px; height: 50px; border-radius: 50%; opacity: 0.8;">
                 <span class="carousel-control-prev-icon mb-n2"></span>
             </div>
         </a>
         <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-            <div class="btn btn-dark" style="width: 45px; height: 45px;">
+            <div class="btn btn-primary" style="width: 50px; height: 50px; border-radius: 50%; opacity: 0.8;">
                 <span class="carousel-control-next-icon mb-n2"></span>
             </div>
         </a>
     </div>
 }
 
+<style>
+    .features-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 60px 0;
+    }
+    
+    .feature-card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: none;
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(74,144,226,0.2);
+    }
+    
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        box-shadow: 0 8px 25px rgba(74,144,226,0.3);
+    }
+    
+    .feature-icon i {
+        font-size: 2rem;
+        color: white;
+    }
+    
+    .feature-card h5 {
+        font-weight: 700;
+        color: #2C3E50;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .feature-card p {
+        color: #6c757d;
+        margin: 0;
+        font-size: 0.95rem;
+    }
+    
+    .products-section {
+        padding: 80px 0;
+        background: white;
+    }
+    
+    .section-title {
+        position: relative;
+        display: inline-block;
+        font-weight: 700;
+        color: #2C3E50;
+        margin-bottom: 50px;
+    }
+    
+    .section-title::before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border-radius: 2px;
+    }
+    
+    .product-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(74,144,226,0.2);
+    }
+    
+    .product-image {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+    }
+    
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+        transform: scale(1.1);
+    }
+    
+    .product-info {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .product-name {
+        font-weight: 600;
+        color: #2C3E50;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    .product-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .current-price {
+        font-weight: 700;
+        color: #4A90E2;
+        font-size: 1.2rem;
+    }
+    
+    .old-price {
+        color: #6c757d;
+        text-decoration: line-through;
+        font-size: 1rem;
+    }
+    
+    .product-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+    }
+    
+    .action-btn {
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .view-btn {
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        color: white;
+    }
+    
+    .view-btn:hover {
+        background: linear-gradient(135deg, #357ABD 0%, #2C5F9E 100%);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+    
+    .cart-btn {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+    }
+    
+    .cart-btn:hover {
+        background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+    
+    .newsletter-section {
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        padding: 80px 0;
+        color: white;
+    }
+    
+    .newsletter-content {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .newsletter-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .newsletter-description {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        gap: 15px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        outline: none;
+    }
+    
+    .newsletter-btn {
+        padding: 15px 30px;
+        background: white;
+        color: #4A90E2;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .newsletter-btn:hover {
+        background: #f8f9fa;
+        transform: translateY(-2px);
+    }
+</style>
 
-<!-- Featured Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+<div class="features-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <h5>Quality Product</h5>
+                    <p>We offer the highest quality products with 100% original product guarantee.</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-shipping-fast"></i>
+                    </div>
+                    <h5>Free Shipping</h5>
+                    <p>Free shipping on orders over $50 with fast delivery.</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h5>14-Day Return</h5>
+                    <p>Unconditional return and exchange rights within 14 days.</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-phone-volume"></i>
+                    </div>
+                    <h5>24/7 Support</h5>
+                    <p>We are always with you, contact us for your questions.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Featured End -->
-    
-    <!-- Products Start -->
-    <div class="container-fluid pt-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Best Sellers</span></h2>
+</div>
+
+<div class="products-section">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">Best Sellers</h2>
         </div>
-        <div class="row px-xl-5 pb-3">
+        <div class="row">
             @foreach (var item in Model)
             {            
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="card product-item border-0 mb-4">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="https://images.weserv.nl/?url=@(System.Net.WebUtility.UrlEncode(item.ImageUrl))&w=450&h=600&fit=cover&q=100" alt="">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="@ImageHelper.GetProductImageUrl(item.ImageUrl)" 
+                                 srcset="@ImageHelper.GetSrcSet(item.ImageUrl)"
+                                 sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw"
+                                 alt="@item.ProductName"
+                                 loading="lazy"
+                                 onerror="this.src='@ImageHelper.DEFAULT_IMAGE'">
                         </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">@item.ProductName</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$@item.Price</h6><h6 class="text-muted ml-2"><del>$@item.Price</del></h6>
+                        <div class="product-info">
+                            <h6 class="product-name">@item.ProductName</h6>
+                            <div class="product-price">
+                                <span class="current-price">$@item.Price</span>
                             </div>
                         </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="/Product/Detail?id=@item.Productİd" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="#" class="btn btn-sm text-dark p-0" onclick="addToCart(@item.Productİd,@item.Price)" ><i class="fas fa-shopping-cart text-primary mr-1" ></i>Add To Cart</a>
+                        <div class="product-actions">
+                            <a href="/Product/Detail?id=@item.ProductId" class="action-btn view-btn">
+                                <i class="fas fa-eye mr-1"></i>View Detail
+                            </a>
+                            <button class="action-btn cart-btn" onclick="addToCart(@item.ProductId,@item.Price)">
+                                <i class="fas fa-shopping-cart mr-1"></i>Add To Cart
+                            </button>
                         </div>
                     </div>
                 </div>
-                
             }
         </div>
     </div>
-    <!-- Products End -->
-    <!-- Subscribe Start -->
-    <div class="container-fluid bg-secondary my-5">
-        <div class="row justify-content-md-center py-5 px-xl-5">
-            <div class="col-md-6 col-12 py-5">
-                <div class="text-center mb-2 pb-2">
-                    <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Get News About Innovations </span></h2>
-                    <p>You can subscribe to our newsletter to be the first to hear about products and special offers.</p>
-                </div>
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-white p-4" placeholder="Email Goes Here">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+</div>
+
+<div class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2 class="newsletter-title">Get News About Innovations</h2>
+            <p class="newsletter-description">Be the first to hear about our products and special offers. Subscribe to our newsletter!</p>
+            <form class="newsletter-form" action="/Subscriber/Create" method="post">
+                <input type="email" class="newsletter-input" name="email" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
         </div>
     </div>
+</div>
+
 <script>
-    function addToCart(id,totalprice) {
+    function addToCart(id, totalprice) {
+        const button = event.target.closest('.cart-btn');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i>Adding...';
+        button.disabled = true;
+        
         const data = {
             ProductId: id,
-            Quantity: 1 ,
+            Quantity: 1,
             TotalPrice: totalprice
         };
-        console.log(data);
+        
         $.ajax({
             url: '/Cart/AddToCartItem',
             type: 'POST',
@@ -153,15 +417,80 @@
             data: JSON.stringify(data),
             success: function (response) {
                 if (response.success) {
-                    alert('Product added to cart successfully!');
-                    location.reload();
+                    showNotification(response.message || 'Product added to cart successfully!', 'success');
+                    updateCartCount();
                 } else {
-                    alert('Error: ' + response.error);
+                    showNotification('Error: ' + (response.error || 'Unknown error occurred'), 'error');
                 }
             },
             error: function (xhr, status, error) {
-                alert('Error: ' + error);
+                let errorMessage = 'An error occurred while adding to cart';
+                
+                if (xhr.responseJSON && xhr.responseJSON.error) {
+                    errorMessage = xhr.responseJSON.error;
+                } else if (xhr.status === 0) {
+                    errorMessage = 'Network error. Please check your connection.';
+                } else if (xhr.status === 500) {
+                    errorMessage = 'Server error. Please try again later.';
+                }
+                
+                showNotification(errorMessage, 'error');
+            },
+            complete: function () {
+                button.innerHTML = originalText;
+                button.disabled = false;
             }
         });
     }
+    
+    function updateCartCount() {
+        const cartBadge = document.querySelector('.btn[href="/Cart/Index"] .badge');
+        if (cartBadge) {
+            const currentCount = parseInt(cartBadge.textContent) || 0;
+            cartBadge.textContent = currentCount + 1;
+        }
+    }
+    
+    function showNotification(message, type) {
+        const existingNotifications = document.querySelectorAll('.custom-notification');
+        existingNotifications.forEach(notification => {
+            document.body.removeChild(notification);
+        });
+        
+        const notification = document.createElement('div');
+        notification.className = 'custom-notification';
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            z-index: 9999;
+            background: ${type === 'success' ? 'linear-gradient(135deg, #28a745 0%, #20c997 100%)' : 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)'};
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            max-width: 300px;
+            word-wrap: break-word;
+        `;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 300);
+        }, 4000);
+    }
+    
 </script>

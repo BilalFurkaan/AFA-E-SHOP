@@ -22,9 +22,9 @@ public class ProductService:IProductService
         var values=await _repository.GetAllAsync();
         return values.Select(x => new ResultProductDto
         {
-            Productİd = x.Productİd,
+            ProductId = x.ProductId,
             ProductName = x.ProductName,
-            Desription = x.Desription,
+            Description = x.Description,
             Price = x.Price,
             Stock = x.Stock,
             ImageUrl = x.ImageUrl,
@@ -38,9 +38,9 @@ public class ProductService:IProductService
         var values=await _repository.GetByIdAsync(id);
         return new GetByIdProductDto
         {
-            Productİd = values.Productİd,
+            ProductId = values.ProductId,
             ProductName = values.ProductName,
-            Desription = values.Desription,
+            Description = values.Description,
             Price = values.Price,
             Stock = values.Stock,
             ImageUrl = values.ImageUrl,
@@ -54,7 +54,7 @@ public class ProductService:IProductService
         await _repository.CreateAsync((new Product
         {
             ProductName = model.ProductName,
-            Desription = model.Desription,
+            Description = model.Description,
             Price = model.Price,
             Stock = model.Stock,
             ImageUrl = model.ImageUrl,
@@ -64,9 +64,9 @@ public class ProductService:IProductService
 
     public async Task UpdateProductAsync(UpdateProductDto model)
     {
-        var values = await _repository.GetByIdAsync(model.Productİd);
+        var values = await _repository.GetByIdAsync(model.ProductId);
         values.ProductName = model.ProductName;
-        values.Desription = model.Desription;
+        values.Description = model.Description;
         values.Price = model.Price;
         values.Stock = model.Stock;
         values.ImageUrl = model.ImageUrl;
@@ -86,9 +86,9 @@ public class ProductService:IProductService
         var values=await _repository.GetTakeAsync(piece);
         return values.Select(x => new ResultProductDto
         {
-            Productİd = x.Productİd,
+            ProductId = x.ProductId,
             ProductName = x.ProductName,
-            Desription = x.Desription,
+            Description = x.Description,
             Price = x.Price,
             Stock = x.Stock,
             ImageUrl = x.ImageUrl,
@@ -102,9 +102,9 @@ public class ProductService:IProductService
         var values=await _productsRepository.GetProductByCategory(categoryId);
         return values.Select(x => new ResultProductDto
         {
-            Productİd = x.Productİd,
+            ProductId = x.ProductId,
             ProductName = x.ProductName,
-            Desription = x.Desription,
+            Description = x.Description,
             Price = x.Price,
             Stock = x.Stock,
             ImageUrl = x.ImageUrl,
@@ -119,9 +119,9 @@ public class ProductService:IProductService
         var values=await _productsRepository.GetProductByPriceFilter(minprice,maxprice);
         return values.Select(x => new ResultProductDto
         {
-            Productİd = x.Productİd,
+            ProductId = x.ProductId,
             ProductName = x.ProductName,
-            Desription = x.Desription,
+            Description = x.Description,
             Price = x.Price,
             Stock = x.Stock,
             ImageUrl = x.ImageUrl,
@@ -135,9 +135,9 @@ public class ProductService:IProductService
         var values=await _productsRepository.GetProductBySearch(productName);
         return values.Select(x => new ResultProductDto
         {
-            Productİd = x.Productİd,
+            ProductId = x.ProductId,
             ProductName = x.ProductName,
-            Desription = x.Desription,
+            Description = x.Description,
             Price = x.Price,
             Stock = x.Stock,
             ImageUrl = x.ImageUrl,

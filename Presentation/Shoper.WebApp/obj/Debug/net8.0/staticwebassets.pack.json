@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/img/AFACAR.jpg"
     },
     {
+      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/Furkan.JPG",
+      "PackagePath": "staticwebassets/img/Furkan.JPG"
+    },
+    {
       "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/Garden.jpg",
       "PackagePath": "staticwebassets/img/Garden.jpg"
     },
@@ -33,112 +37,8 @@
       "PackagePath": "staticwebassets/img/carousel-2.jpg"
     },
     {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/cat-1.jpg",
-      "PackagePath": "staticwebassets/img/cat-1.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/cat-2.jpg",
-      "PackagePath": "staticwebassets/img/cat-2.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/cat-3.jpg",
-      "PackagePath": "staticwebassets/img/cat-3.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/cat-4.jpg",
-      "PackagePath": "staticwebassets/img/cat-4.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/cat-5.jpg",
-      "PackagePath": "staticwebassets/img/cat-5.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/cat-6.jpg",
-      "PackagePath": "staticwebassets/img/cat-6.jpg"
-    },
-    {
       "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/headphone.jpg",
       "PackagePath": "staticwebassets/img/headphone.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/offer-1.png",
-      "PackagePath": "staticwebassets/img/offer-1.png"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/offer-2.png",
-      "PackagePath": "staticwebassets/img/offer-2.png"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/payments.png",
-      "PackagePath": "staticwebassets/img/payments.png"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-1.jpg",
-      "PackagePath": "staticwebassets/img/product-1.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-2.jpg",
-      "PackagePath": "staticwebassets/img/product-2.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-3.jpg",
-      "PackagePath": "staticwebassets/img/product-3.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-4.jpg",
-      "PackagePath": "staticwebassets/img/product-4.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-5.jpg",
-      "PackagePath": "staticwebassets/img/product-5.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-6.jpg",
-      "PackagePath": "staticwebassets/img/product-6.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-7.jpg",
-      "PackagePath": "staticwebassets/img/product-7.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/product-8.jpg",
-      "PackagePath": "staticwebassets/img/product-8.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/user.jpg",
-      "PackagePath": "staticwebassets/img/user.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-1.jpg",
-      "PackagePath": "staticwebassets/img/vendor-1.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-2.jpg",
-      "PackagePath": "staticwebassets/img/vendor-2.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-3.jpg",
-      "PackagePath": "staticwebassets/img/vendor-3.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-4.jpg",
-      "PackagePath": "staticwebassets/img/vendor-4.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-5.jpg",
-      "PackagePath": "staticwebassets/img/vendor-5.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-6.jpg",
-      "PackagePath": "staticwebassets/img/vendor-6.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-7.jpg",
-      "PackagePath": "staticwebassets/img/vendor-7.jpg"
-    },
-    {
-      "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/img/vendor-8.jpg",
-      "PackagePath": "staticwebassets/img/vendor-8.jpg"
     },
     {
       "Id": "/Users/bilalfurkankaraca/Desktop/Shoper/Presentation/Shoper.WebApp/wwwroot/js/main.js",

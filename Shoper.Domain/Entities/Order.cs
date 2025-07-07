@@ -8,15 +8,15 @@ public class Order
     public string OrderStatus { get; set; }
 
     public int ShippingCityId { get; set; }
-
     public int ShippingTownId { get; set; }
-   // public string BillingAdress { get; set; }
     public string ShippingAdress { get; set; }
-   // public string PaymentMethod { get; set; }
+    
+    // Foreign Key
     public int CustomerId { get; set; }
-    public string CustomerName { get; set; }// not a member
-    public string CustomerSurname { get; set; }// not a member
-    public string CustomerEmail { get; set; }// not a member
-    public string CustomerPhone { get; set; }
-    public List<OrderItem> OrderItems { get; set; }
+    
+    // Navigation Properties
+    public Customer Customer { get; set; }
+    public City ShippingCity { get; set; }
+    public Town ShippingTown { get; set; }
+    public ICollection<OrderItem> OrderItems { get; set; }
 }

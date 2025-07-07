@@ -3,11 +3,11 @@ using ShoperApplication.Dtos.SubscriberDtos;
 
 namespace ShoperApplication.Usecasess.SubscriberServices;
 
-public interface ISubscriberServices
+public interface ISubscriberService
 {
-    Task<List<ResultSubscriberDto>> GetAllSubscribers();
+    Task<List<ResultSubscriberDto>> GetAllAsyncSubscribers();
     Task<GetByIdSubscriberDto> GetByIdSubscriberAsync(int id);
-    Task CreateSubscriberAsync(CreateSubscriberDto model);
-    Task UpdateSubscriberAsync(UpdateSubscriberDto model);
+    Task CreateSubscriberAsync(CreateSubscriberDto dto);
+    Task UpdateSubscriberAsync(UpdateSubscriberDto dto);
     Task DeleteSubscriberAsync(int id);
 }

@@ -8,7 +8,8 @@ public class Cart
     public decimal TotalAmount { get; set; }
     public DateTime CreatedDate { get; set; }
     public int CustomerId { get; set; }
-   // public Customer? Customer { get; set; }
-    public ICollection<CartItem> CartItems { get; set; }
     
+    // Navigation Properties
+    public Customer Customer { get; set; }
+    public ICollection<CartItem> CartItems { get; set; }
 }

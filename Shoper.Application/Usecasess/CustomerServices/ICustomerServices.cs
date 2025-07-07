@@ -7,6 +7,7 @@ public interface ICustomerServices
 {
     Task<List<ResultCustomerDto>> GetAllCustomerAsync();
     Task<GetByIdCustomerDto>  GetByIdCustomerAsync(int id);
+    Task<GetByIdCustomerDto> GetByIdentityIdAsync(string identityId);
     Task CreateCustomerAsync(CreateCustomerDto createCustomerDto);
     Task UpdateCustomerAsync(UpdateCustomerDto updateCustomerDto);
     Task DeleteCustomerAsync(int id);   

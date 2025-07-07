@@ -53,7 +53,3 @@ logs/
 # Temporary files
 *.tmp
 *.temp
-
-# Database Context Files with Connection Strings
-Shoper.Persistence/Context/AppDbContext.cs
-Shoper.Persistence/Context/Identity/AppIdentityDbContext.cs

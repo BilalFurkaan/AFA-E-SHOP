@@ -46,10 +46,6 @@ public class OrderServices: IOrderServices
                 ShippingTownId = item.ShippingTownId,
                 // PaymentMethod = model.PaymentMethod,
                 CustomerId = item.CustomerId,
-                CustomerName = item.CustomerName,
-                CustomerSurname = item.CustomerSurname,
-                CustomerEmail = item.CustomerEmail,
-                CustomerPhone = item.CustomerPhone,
                 OrderItems = new List<ResultOrderItemDto>()
             };
             foreach (var value in item.OrderItems)
@@ -87,10 +83,6 @@ public class OrderServices: IOrderServices
             ShippingTownId = values.ShippingTownId,
             // PaymentMethod = values.PaymentMethod,
             CustomerId = values.CustomerId,
-            CustomerName = values.CustomerName,
-            CustomerSurname = values.CustomerSurname,
-            CustomerEmail = values.CustomerEmail,
-            CustomerPhone = values.CustomerPhone,
             OrderItems = new List<ResultOrderItemDto>()
         };
         foreach (var item in result.OrderItems)
@@ -126,10 +118,6 @@ public class OrderServices: IOrderServices
             ShippingTownId = model.ShippingTownId,
            // PaymentMethod = model.PaymentMethod,
             CustomerId = model.CustomerId,
-            CustomerName = model.CustomerName,
-            CustomerSurname = model.CustomerSurname,
-            CustomerEmail = model.CustomerEmail,
-            CustomerPhone = model.CustomerPhone,
             
         };
         await _repository.CreateAsync(order);
@@ -191,7 +179,6 @@ public class OrderServices: IOrderServices
         var cities= await _orderRepository.GetCities();
         return cities.Select(x=> new ResultCityDto
         {
-            Id = x.Id,
             CityId = x.CityId,
             CityName = x.CityName
         }).ToList();
@@ -207,5 +194,40 @@ public class OrderServices: IOrderServices
             CityId = x.CityId
         }).ToList();
         
+    }
+
+    public async Task<List<ResultOrderDto>> GetOrdersByCustomerIdAsync(int customerId)
+    {
+        var customer = await _customerRepository.GetByIdAsync(customerId);
+        if (customer == null)
+            throw new KeyNotFoundException("Customer not found");
+
+        var orders = await _repository.GetAllAsync();
+        var customerOrders = orders?.Where(x => x.CustomerId == customerId).ToList();
+        if (customerOrders == null || !customerOrders.Any())
+            return new List<ResultOrderDto>();
+
+        var result = new List<ResultOrderDto>();
+        foreach (var order in customerOrders)
+        {
+            if (order == null) continue;
+
+            var orderDto = new ResultOrderDto
+            {
+                OrderId = order.OrderId,
+                OrderDate = order.OrderDate,
+                TotalAmount = order.TotalAmount,
+                OrderStatus = order.OrderStatus,
+                ShippingAdress = order.ShippingAdress,
+                ShippingCityId = order.ShippingCityId,
+                ShippingTownId = order.ShippingTownId,
+                CustomerId = order.CustomerId,
+                OrderItems = new List<ResultOrderItemDto>()
+            };
+
+            result.Add(orderDto);
+        }
+
+        return result;
     }
 }

@@ -1,7 +1,11 @@
 using System.Diagnostics;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Shoper.WebApp.Models;
+using ShoperApplication.Dtos.CartDtos;
 using ShoperApplication.Usecasess.ProductServices;
+// using ShoperApplication.Usecasess.CartServices;
+// using Microsoft.AspNetCore.Http;
 
 namespace Shoper.WebApp.Controllers;
 
@@ -21,8 +25,8 @@ public class HomeController : Controller
         var values=await _productService.GetProductTake(8);
         return View(values);
     }
-
-    public IActionResult Privacy()
+    
+    public IActionResult Contact()
     {
         return View();
     }

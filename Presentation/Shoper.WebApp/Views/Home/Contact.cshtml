@@ -1,0 +1,299 @@
+@{
+    ViewData["Title"] = "Contact - AFA Shop";
+}
+
+<style>
+    .contact-hero {
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        color: white;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .contact-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+    }
+    
+    .contact-hero-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .profile-section {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        padding: 40px;
+        margin-top: -50px;
+        position: relative;
+        z-index: 3;
+    }
+    
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        box-shadow: 0 8px 25px rgba(74,144,226,0.3);
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    
+    .social-link {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .social-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .twitter { background: linear-gradient(135deg, #1DA1F2 0%, #0D8BD9 100%); }
+    .linkedin { background: linear-gradient(135deg, #0077B5 0%, #005885 100%); }
+    .instagram { background: linear-gradient(135deg, #E4405F 0%, #C13584 100%); }
+    .github { background: linear-gradient(135deg, #333 0%, #24292e 100%); }
+    
+    .project-section {
+        background: #f8f9fa;
+        border-radius: 20px;
+        padding: 40px;
+        margin-top: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .tech-tag {
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    .contact-info {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        margin-top: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 15px;
+        background: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+        background: #e9ecef;
+        transform: translateX(5px);
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    
+    .section-title {
+        color: #2C3E50;
+        font-weight: 700;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border-radius: 2px;
+    }
+    
+    .text-content {
+        line-height: 1.8;
+        color: #6c757d;
+        font-size: 1.05rem;
+    }
+    
+    .highlight {
+        color: #4A90E2;
+        font-weight: 600;
+    }
+</style>
+
+<!-- Hero Section -->
+<div class="contact-hero">
+    <div class="container">
+                    <div class="contact-hero-content text-center">
+                <h1 class="display-4 font-weight-bold mb-3">Get In Touch</h1>
+            </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <div class="text-center">
+            <div class="profile-avatar">
+                <img src="/img/Furkan.jpg" alt="Bilal Furkan Karaca" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h2 class="text-center" style="color: #2C3E50; font-weight: 700; margin-bottom: 20px;">Bilal Furkan Karaca</h2>
+            <p class="text-content text-center">
+                I'm Bilal Furkan Karaca. In my software development journey, I mainly focus on back-end development and continuously work on improving myself in this field.
+            </p>
+            <p class="text-content text-center">
+                I primarily use <span class="highlight">C#</span>, <span class="highlight">.NET Core</span>, and <span class="highlight">SQL</span> in my projects, aiming to build robust, sustainable, and reliable software solutions.
+            </p>
+            <p class="text-content text-center">
+                I place great importance on exploring new technologies, continuous learning, and sharing the knowledge I gain.
+            </p>
+            <p class="text-content text-center">
+                I'm always open to connecting and exchanging experiences.
+            </p>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://x.com/BFurkaan1" class="social-link twitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/bilal-furkan-karaca/" class="social-link linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/bilalfurkaan/" class="social-link instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/BilalFurkaan" class="social-link github" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Section -->
+    <div class="project-section">
+        <h3 style="color: #2C3E50; font-weight: 700; margin-bottom: 20px;">AFA E-Commerce Project</h3>
+        <div class="text-content">
+            <p>
+                A comprehensive <span class="highlight">.NET Core</span> project developed to meet modern e-commerce needs, designed with layered architecture following <span class="highlight">Clean Architecture</span> principles. The structure consists of Domain, Application, Infrastructure, and Presentation layers.
+            </p>
+            <p>
+                Data access layer was abstracted using <span class="highlight">Repository Pattern</span>, and data transfer optimization was achieved through <span class="highlight">DTO Pattern</span>. Provides multi-platform support by offering both Web API and MVC-based web applications.
+            </p>
+            <p>
+                Product management, category system, cart operations, order management, and customer profile modules were developed using <span class="highlight">PostgreSQL</span> database. Secure authentication system was implemented with <span class="highlight">ASP.NET Core Identity</span> integration, mobile-responsive user interface with responsive design, and modern UI/UX principles were applied.
+            </p>
+            <p>
+                Performance and code quality were optimized through <span class="highlight">SOLID principles</span>, async/await pattern usage, and structured logging.
+            </p>
+        </div>
+        
+        <h4 class="mt-4 mb-3" style="color: #2C3E50; font-weight: 600;">Technologies Used:</h4>
+        <div class="tech-stack">
+            <span class="tech-tag">.NET Core 8.0</span>
+            <span class="tech-tag">Entity Framework Core</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">ASP.NET Core MVC</span>
+            <span class="tech-tag">Web API</span>
+            <span class="tech-tag">Bootstrap 5</span>
+            <span class="tech-tag">SCSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Clean Architecture</span>
+            <span class="tech-tag">Repository Pattern</span>
+            <span class="tech-tag">Service Layer</span>
+            <span class="tech-tag">Dependency Injection</span>
+            <span class="tech-tag">MVC Pattern</span>
+            <span class="tech-tag">SOLID Principles</span>
+        </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <h3 style="color: #2C3E50; font-weight: 700; margin-bottom: 20px;">Contact Information</h3>
+        <div class="contact-item">
+            <div class="contact-icon">
+                <i class="fa fa-map-marker-alt"></i>
+            </div>
+            <div>
+                <h5 class="mb-1" style="color: #2C3E50; font-weight: 600;">Location</h5>
+                <p class="mb-0" style="color: #6c757d;">Antalya, Turkey</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div>
+                <h5 class="mb-1" style="color: #2C3E50; font-weight: 600;">Email</h5>
+                <p class="mb-0" style="color: #6c757d;">bfurkankaraca1@gmail.com</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div>
+                <h5 class="mb-1" style="color: #2C3E50; font-weight: 600;">LinkedIn</h5>
+                <p class="mb-0" style="color: #6c757d;">linkedin.com/in/bilal-furkan-karaca</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">
+                <i class="fa fa-code"></i>
+            </div>
+            <div>
+                <h5 class="mb-1" style="color: #2C3E50; font-weight: 600;">GitHub</h5>
+                <p class="mb-0" style="color: #6c757d;">github.com/BilalFurkaan</p>
+            </div>
+        </div>
+    </div>
+</div> 

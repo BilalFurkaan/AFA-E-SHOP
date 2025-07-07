@@ -78,11 +78,7 @@ public class CartItemService: ICartItemService
 
     public async Task UpdateQuantityAsync(int cartId, int productId, int quantity)
     {
-        var cart = await _repository.GetByIdAsync(cartId);
-        var tempprice= cart.TotalPrice / cart.Quantity;
-        cart.Quantity += quantity; 
-        cart.TotalPrice =tempprice * cart.Quantity; 
-        await _repository.UpdateAsync(cart);
+        await _cartItemRepository.UpdateQuantityAsync(cartId, productId, quantity);
     }
 
     public async Task<bool> CheckCartItems(int cartId, int productId)

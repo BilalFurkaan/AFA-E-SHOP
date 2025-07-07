@@ -42,6 +42,20 @@ public class CustomerServices: ICustomerServices
         };
     }
 
+    public async Task<GetByIdCustomerDto> GetByIdentityIdAsync(string identityId)
+    {
+        var customer = await _repository.GetByFilterAsync(x => x.IdentityId == identityId);
+        if (customer == null) return null;
+        return new GetByIdCustomerDto
+        {
+            CustomerId = customer.CustomerId,
+            FirstName = customer.FirstName,
+            LastName = customer.LastName,
+            Email = customer.Email,
+            PhoneNumber = customer.PhoneNumber
+        };
+    }
+
     public async Task CreateCustomerAsync(CreateCustomerDto createCustomerDto)
     {
         await _repository.CreateAsync(new Customer
@@ -50,7 +64,7 @@ public class CustomerServices: ICustomerServices
             LastName = createCustomerDto.LastName,
             Email = createCustomerDto.Email,
             PhoneNumber = createCustomerDto.PhoneNumber,
-            
+            IdentityId = createCustomerDto.IdentityId
         });
     }
 

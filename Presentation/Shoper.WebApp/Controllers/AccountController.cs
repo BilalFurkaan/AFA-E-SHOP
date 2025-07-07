@@ -37,11 +37,8 @@ public class AccountController : Controller
     [HttpPost]
     public async Task<IActionResult> Register(RegisterDto dto)
     {
-        var result = await _accountServices.Register(dto);
-        if (result == "User registered successfully")
-            return RedirectToAction("Login", "Account");
-        ViewBag.Error = result;
-        return View();
+        var value = await _accountServices.Register(dto);
+        return RedirectToAction("Index", "Home");
     }
 
     public async Task<IActionResult> Logout()

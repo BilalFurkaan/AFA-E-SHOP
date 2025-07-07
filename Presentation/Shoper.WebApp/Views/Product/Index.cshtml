@@ -1,5 +1,248 @@
 @using Shoper.Domain.Entities
 @model List<ShoperApplication.Dtos.ProductDtos.ResultProductDto>
+@{
+    ViewData["Title"] = "Products";
+}
+
+@Html.AntiForgeryToken()
+
+<style>
+    .price-filter-container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        padding: 25px;
+        border: 1px solid #e9ecef;
+        margin-bottom: 30px;
+        position: sticky;
+        top: 20px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+    
+    .price-filter-container:hover {
+        box-shadow: 0 15px 40px rgba(74,144,226,0.15);
+        transform: translateY(-2px);
+    }
+    
+    .price-filter-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #2C3E50;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .price-filter-title::before {
+        content: '';
+        width: 4px;
+        height: 25px;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        border-radius: 2px;
+    }
+    
+    .price-filter-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        margin-bottom: 8px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: #2C3E50;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .price-filter-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        transition: left 0.3s ease;
+        z-index: 1;
+    }
+    
+    .price-filter-item:hover::before {
+        left: 0;
+    }
+    
+    .price-filter-item:hover {
+        transform: translateX(8px);
+        box-shadow: 0 6px 20px rgba(74,144,226,0.2);
+        border-color: #4A90E2;
+    }
+    
+    .price-filter-item span {
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+    }
+    
+    .price-filter-item:hover span {
+        color: white;
+    }
+    
+    .price-filter-item.active {
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        color: white;
+        box-shadow: 0 6px 20px rgba(74,144,226,0.3);
+    }
+    
+    .price-filter-item.active span {
+        color: white;
+    }
+    
+    .price-range-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        color: #4A90E2;
+        transition: all 0.3s ease;
+    }
+    
+    .price-filter-item:hover .price-range-icon,
+    .price-filter-item.active .price-range-icon {
+        color: white;
+        transform: scale(1.1);
+    }
+    
+    .price-badge {
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-left: auto;
+        transition: all 0.3s ease;
+    }
+    
+    .price-filter-item:hover .price-badge,
+    .price-filter-item.active .price-badge {
+        background: white;
+        color: #4A90E2;
+        transform: scale(1.05);
+    }
+
+    /* Home page'deki ürün kartı tasarımı */
+    .product-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(74,144,226,0.2);
+    }
+    
+    .product-image {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+    }
+    
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+        transform: scale(1.1);
+    }
+    
+    .product-info {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .product-name {
+        font-weight: 600;
+        color: #2C3E50;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    .product-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .current-price {
+        font-weight: 700;
+        color: #4A90E2;
+        font-size: 1.2rem;
+    }
+    
+    .old-price {
+        color: #6c757d;
+        text-decoration: line-through;
+        font-size: 1rem;
+    }
+    
+    .product-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+    }
+    
+    .action-btn {
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .view-btn {
+        background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+        color: white;
+    }
+    
+    .view-btn:hover {
+        background: linear-gradient(135deg, #357ABD 0%, #2C5F9E 100%);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+    
+    .cart-btn {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+    }
+    
+    .cart-btn:hover {
+        background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+</style>
+
 <div class="container-fluid mb-5" style="background: linear-gradient(45deg, rgba(17,98,203,0.22), #2575fc); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 200px; padding: 20px;">
         <h1 class="font-weight-semi-bold text-uppercase mb-3" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Our Products</h1>
@@ -10,126 +253,185 @@
         </div>
     </div>
 </div>
-    <!-- Shop Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-            <!-- Shop Sidebar Start -->
-            <div class="col-lg-3 col-md-12">
-                <!-- Price Start -->
-                <div class="border-bottom mb-4 pb-4">
-                    <h5 class="font-weight-semi-bold mb-4">Filter by price</h5>
-                    <form>
-                        <div class="list-group">
-                            <a href="/Product/Index" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                All Price
-                            </a>
-                            <a href="/Product/Index?minprice=0&maxprice=10" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $0 - $10
-                            </a>
-                            <a href="/Product/Index?minprice=10&maxprice=30" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $10 - $30
-                            </a>
-                            <a href="/Product/Index?minprice=30&maxprice=50" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $30 - $50
-                            </a>
-                            <a href="/Product/Index?minprice=50&maxprice=100" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $50 - $100
-                            </a>
-                            <a href="/Product/Index?minprice=100&maxprice=200" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $100 - $200
-                            </a>
-                            <a href="/Product/Index?minprice=200&maxprice=300" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $200 - $300
-                            </a>
-                            <a href="/Product/Index?minprice=300&maxprice=400" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $300 - $400
-                            </a>
-                            <a href="/Product/Index?minprice=400&maxprice=500" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $400 - $500
-                            </a>
-                            <a href="/Product/Index?minprice=500&maxprice=1000" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $500 - $1000
-                            </a>
-                            <a href="/Product/Index?minprice=1000&maxprice=100000" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                $500+
-                            </a>
-                        </div>
-                    </form>
-                </div>
-                <!-- Price End -->
-            </div>
-            <div class="col-lg-9 col-md-12">
-                <div class="row pb-3">
-                    <div class="col-12 pb-1">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <form action="Index" method="post">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search by name" id="search" name="search">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-transparent text-primary">
-                                           <button type="submit"><i class="fa fa-search"></i></button> 
-                                        </span>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="dropdown ml-4">
-                                <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    Sort by
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
-                                    <a class="dropdown-item" href="#">Latest</a>
-                                    <a class="dropdown-item" href="#">Popularity</a>
-                                    <a class="dropdown-item" href="#">Best Rating</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                            <div class="card product-item border-0 mb-4">
-                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <img class="img-fluid w-100" src="@item.ImageUrl" alt="" style="height: 400px;  object-fit: cover;">
-                                </div>
-                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 class="text-truncate mb-3">@item.ProductName</h6>
-                                    <div class="d-flex justify-content-center">
-                                        <h6>$@item.Price</h6><h6 class="text-muted ml-2"><del>$@item.Price</del></h6>
-                                    </div>
-                                </div>
-                                <div class="card-footer d-flex justify-content-between bg-light border">
-                                    <a href="/Product/Detail?id=@item.Productİd" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    }
 
-                    <div class="col-12 pb-1">
-                        <nav aria-label="Page navigation">
-                          <ul class="pagination justify-content-center mb-3">
-                            <li class="page-item disabled">
-                              <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                              </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </nav>
-                    </div>
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-12">
+            <div class="price-filter-container">
+                <h5 class="price-filter-title">Filter by Price</h5>
+                <div class="price-filter-list">
+                    <a href="/Product/Index" class="price-filter-item @(Context.Request.Query["minprice"].Count == 0 ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                        </svg>
+                        <span>All Prices</span>
+                        <span class="price-badge">All</span>
+                    </a>
+                    <a href="/Product/Index?minprice=0&maxprice=10" class="price-filter-item @(Context.Request.Query["minprice"] == "0" && Context.Request.Query["maxprice"] == "10" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$0 - $10</span>
+                        <span class="price-badge">$10</span>
+                    </a>
+                    <a href="/Product/Index?minprice=10&maxprice=30" class="price-filter-item @(Context.Request.Query["minprice"] == "10" && Context.Request.Query["maxprice"] == "30" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$10 - $30</span>
+                        <span class="price-badge">$30</span>
+                    </a>
+                    <a href="/Product/Index?minprice=30&maxprice=50" class="price-filter-item @(Context.Request.Query["minprice"] == "30" && Context.Request.Query["maxprice"] == "50" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$30 - $50</span>
+                        <span class="price-badge">$50</span>
+                    </a>
+                    <a href="/Product/Index?minprice=50&maxprice=100" class="price-filter-item @(Context.Request.Query["minprice"] == "50" && Context.Request.Query["maxprice"] == "100" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$50 - $100</span>
+                        <span class="price-badge">$100</span>
+                    </a>
+                    <a href="/Product/Index?minprice=100&maxprice=200" class="price-filter-item @(Context.Request.Query["minprice"] == "100" && Context.Request.Query["maxprice"] == "200" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$100 - $200</span>
+                        <span class="price-badge">$200</span>
+                    </a>
+                    <a href="/Product/Index?minprice=200&maxprice=300" class="price-filter-item @(Context.Request.Query["minprice"] == "200" && Context.Request.Query["maxprice"] == "300" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$200 - $300</span>
+                        <span class="price-badge">$300</span>
+                    </a>
+                    <a href="/Product/Index?minprice=300&maxprice=400" class="price-filter-item @(Context.Request.Query["minprice"] == "300" && Context.Request.Query["maxprice"] == "400" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$300 - $400</span>
+                        <span class="price-badge">$400</span>
+                    </a>
+                    <a href="/Product/Index?minprice=400&maxprice=500" class="price-filter-item @(Context.Request.Query["minprice"] == "400" && Context.Request.Query["maxprice"] == "500" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$400 - $500</span>
+                        <span class="price-badge">$500</span>
+                    </a>
+                    <a href="/Product/Index?minprice=500&maxprice=1000" class="price-filter-item @(Context.Request.Query["minprice"] == "500" && Context.Request.Query["maxprice"] == "1000" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>$500 - $1000</span>
+                        <span class="price-badge">$1K</span>
+                    </a>
+                    <a href="/Product/Index?minprice=1000&maxprice=100000" class="price-filter-item @(Context.Request.Query["minprice"] == "1000" && Context.Request.Query["maxprice"] == "100000" ? "active" : "")">
+                        <svg class="price-range-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                        </svg>
+                        <span>$1000+</span>
+                        <span class="price-badge">$1K+</span>
+                    </a>
                 </div>
             </div>
-            <!-- Shop Product End -->
+        </div>
+        <div class="col-lg-9 col-md-12">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="@item.ImageUrl" alt="@item.ProductName">
+                            </div>
+                            <div class="product-info">
+                                <h6 class="product-name">@item.ProductName</h6>
+                                <div class="product-price">
+                                    <span class="current-price">$@item.Price</span>
+                                </div>
+                            </div>
+                            <div class="product-actions">
+                                <a href="/Product/Detail?id=@item.ProductId" class="action-btn view-btn">
+                                    <i class="fas fa-eye mr-1"></i>View Detail
+                                </a>
+                                <button class="action-btn cart-btn" onclick="addToCart(@item.ProductId, '@item.ProductName', @item.Price)">
+                                    <i class="fas fa-shopping-cart mr-1"></i>Add To Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-    <!-- Shop End -->
+</div>
+
+<!-- Bootstrap 5 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function addToCart(productId, productName, price) {
+        // Kullanıcının giriş yapıp yapmadığını kontrol et
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <text>
+            alert('Please login to add items to cart');
+            window.location.href = '/Account/Login';
+            return;
+            </text>
+        }
+
+        // Sepete ekleme isteği
+        fetch('/Cart/AddToCartItem', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+            },
+            body: JSON.stringify({
+                ProductId: productId,
+                Quantity: 1,
+                TotalPrice: price
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Başarılı mesajı göster
+                showNotification('Success!', data.message || 'Product added to cart successfully', 'success');
+            } else {
+                // Hata mesajı göster
+                showNotification('Error!', data.error || 'Failed to add product to cart', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showNotification('Error!', 'An error occurred while adding to cart', 'error');
+        });
+    }
+
+    function showNotification(title, message, type) {
+        // Bootstrap alert oluştur
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
+        alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+        alertDiv.innerHTML = `
+            <strong>${title}</strong> ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        
+        document.body.appendChild(alertDiv);
+        
+        // 3 saniye sonra otomatik kaldır
+        setTimeout(() => {
+            if (alertDiv.parentNode) {
+                alertDiv.remove();
+            }
+        }, 3000);
+    }
+</script>

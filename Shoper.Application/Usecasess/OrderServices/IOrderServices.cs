@@ -13,4 +13,5 @@ public interface IOrderServices
     Task DeleteOrderAsync(int id);  
     Task <List<ResultCityDto>> GetAllCitiesAsync();
     Task<List<GetByIdTownDto>> GetTownsAsync(int cityId);
+    Task <List<ResultOrderDto>> GetOrdersByCustomerIdAsync(int customerId);
 }
