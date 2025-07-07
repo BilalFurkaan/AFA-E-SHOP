@@ -1,4 +1,4 @@
-# 🛍️ Shoper - E-Commerce Platform
+# 🛍️ AFA-E-SHOP - E-Commerce Platform
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/8.0)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-green.svg)](https://dotnet.microsoft.com/apps/aspnet)
@@ -20,12 +20,12 @@ Modern e-commerce platform built with Clean Architecture principles using ASP.NE
 
 ```
 shoper/
-├── 📁 Shoper.Domain/          # Entities & Interfaces
-├── 📁 Shoper.Application/     # Services & DTOs
-├── 📁 Shoper.Persistence/     # DbContext & Repositories
+├── 📁 AFA-SHOP.Domain/          # Entities & Interfaces
+├── 📁 AFA-SHOP.Application/     # Services & DTOs
+├── 📁 AFA-SHOP.Persistence/     # DbContext & Repositories
 └── 📁 Presentation/           # Web App & API
-    ├── 📁 Shoper.WebApp/      # MVC Application
-    └── 📁 Shoper.WebApi/      # REST API
+    ├── 📁 AFA-SHOP.WebApp/      # MVC Application
+    └── 📁 AFA-SHOP.WebApi/      # REST API
 ```
 
 ## 🛠️ Tech Stack
@@ -64,7 +64,7 @@ cd shoper
 
 2. **Create database**
 ```sql
-CREATE DATABASE ShoperDB;
+CREATE DATABASE AFA-SHOP;
 ```
 
 3. **Update connection string**
@@ -72,20 +72,20 @@ CREATE DATABASE ShoperDB;
 // appsettings.json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=ShoperDB;Trusted_Connection=true;TrustServerCertificate=true;"
+    "DefaultConnection": "Server=localhost;Database=AFA-SHOP;Trusted_Connection=true;TrustServerCertificate=true;"
   }
 }
 ```
 
 4. **Run migrations**
 ```bash
-cd Shoper.Persistence
+cd AFA-SHOP.Persistence
 dotnet ef database update
 ```
 
 5. **Run application**
 ```bash
-cd Presentation/Shoper.WebApp
+cd Presentation/AFA-SHOP.WebApp
 dotnet run
 ```
 
